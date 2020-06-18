@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <h1>Life Quotes</h1>
+</div>
+<div class="space"></div>
+<div class="container ">
+
+  <div class="row">
+    <div class="col-md-6">
+      <app-quote-form (addQuote)="addAQuote($event)"></app-quote-form>
+    </div>
+
+
+    <div class="col-md-6 float-right">
+      <div *ngFor="let quote of quotes;let i=index">
+        <div class="card border-info pb-3 mb-4 ">
+        <h3 id="{{i}}" appHighlight style="color: rgb(117, 32, 197);"></h3>
+          <h5 class="text-center font-weight-bold">"{{quote.quote}}"</h5>
+          <p> <strong>Author:</strong> {{quote.author}}</p>
+          <p><strong>Submitted By</strong>:{{quote.submittedBy}}</p>
+          <p><strong>Date Quoted</strong>: {{quote.dateQuoted | dateCount}}</p>
+          <app-quote-details (isComplete)='deletingQuote($event,i)'></app-quote-details>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
+  <h1>Angular Bootstrap Demo</h1>
+  <p class="lead">
+    This demo shows how to integrate Bootstrap 4 with Angular 7
+  </p>
+  <a class="btn btn-lg btn-primary" href="" role="button">View tutorial</a>
+</div>
+
+<footer>
+  <p  class="text-xs-center">© Copyright 2019. All rights reserved.</p>
+</footer>
+
