@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Hackerank"
+    }
+  },
+  "defaultProject": "Hackerank",
+  "cli": {
+    "analytics": false
+  }
 }
