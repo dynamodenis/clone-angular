@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { QuiztestComponent } from './components/quiztest/quiztest.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswerComponent } from './components/question/answer/answer.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AnswerComponent } from './components/question/answer/answer.component';
     QuiztestComponent,
     QuestionComponent,
     AnswerComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
