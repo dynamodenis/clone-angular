@@ -1,0 +1,16 @@
+.quizzes-container {
+  width: 460px;
+  background: #eee;
+  margin: 100px auto 0px auto;
+  padding: 5px 5px 25px 5px;
+}
+
+.quiz-item {
+  display: flex;
+  margin-top: 15px;
+  padding: 5px 0px;
+  align-items: baseline;
+  border-bottom: 1px solid #fff;
+  transition: 0.2s;
+
+}
