@@ -1,0 +1,77 @@
+WHAT I NEED TO DO:
+
+students -> problem
+            problem_detail
+            submit answer
+
+            take test
+
+teacher -> set problem
+           see answers
+           feedback
+
+teacher/
+        -> set problem component
+            ->  create problem
+            -> pass to ts file
+
+                -> ts
+                    -> import service
+                    -> inject service
+                    -> capture problem
+
+        -> answers component
+            -> create answers
+            -> pass answers to the ts file
+
+            -> ts
+                -> import service
+                -> inject service
+                -> capture answers
+
+        -> feedback component
+            -> html
+                form
+                data -> ts
+            -> ts
+                -> import service
+                -> inject service
+                -> capture data
+
+        -> service (ng g s teachers/service/teachers-service.ts)
+            -> make api call to get the answers
+
+
+problem component -> make api call to get the problems
+                  -> display using a card on the problem.component.html
+                  -> link to problem detail
+
+                  problem.component.ts
+                    import the service
+                    -> inject the service(.ts file)
+                    -> subscribe
+                    -> variable to have the required details displayed in a card
+
+problem service -> make api call
+
+            problem_detail_component
+                -> import the service
+                -> inject the service(.ts file)
+                -> subscribe
+                -> variable to have the details
+
+                in the service -> pass the calculcation
+                passed to the db
+
+                problem detail html
+                    problem title
+                    problem description
+                    expected input
+                    expected output
+
+                    calculcation field
+                    submit field
+
+
+generate problems/problem_component and  problem_detail
+generate problems/service/problem_service

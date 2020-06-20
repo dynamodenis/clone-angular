@@ -15,4 +15,15 @@ export class QuizService {
   getQuizzes() {
     // return this.http.get(this.endpoints.quizzes(), {headers: this.globalService.headers()});
   }
+  getQuiz(slug: string) {
+    // return this.http.get(this.endpoints.quiz(slug), {headers: this.globalService.headers()});
+  }
+
+  saveAnswer(body) {
+    // return this.http.patch(this.endpoints.saveAnswer(), body, {headers: this.globalService.headers()});
+  }
+  submitQuiz(body, slug) {
+    // return this.http.post(this.endpoints.submitQuiz(slug), body, {headers: this.globalService.headers()});
+  }
+
 }

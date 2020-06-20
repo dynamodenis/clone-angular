@@ -13,6 +13,7 @@ import { AnswersComponent } from './teacher/answers/answers.component';
 import { FeedbackComponent } from './teacher/feedback/feedback.component';
 import { QuizListComponent } from './students/quiz-list/quiz-list.component';
 import { QuizDetailComponent } from './students/quiz-detail/quiz-detail.component';
+import { QuestionComponent } from './students/quiz-detail/question/question.component';
 
 
 
@@ -26,6 +27,7 @@ import { QuizDetailComponent } from './students/quiz-detail/quiz-detail.componen
     FeedbackComponent,
     QuizListComponent,
     QuizDetailComponent,
+    QuestionComponent,
   ],
 
   imports: [
