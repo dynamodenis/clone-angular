@@ -8,9 +8,8 @@
 .quiz-item {
   display: flex;
   margin-top: 15px;
-  padding: 5px 0px;
+  padding:  5px 0px;
   align-items: baseline;
   border-bottom: 1px solid #fff;
   transition: 0.2s;
-
 }

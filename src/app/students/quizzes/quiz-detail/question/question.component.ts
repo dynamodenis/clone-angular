@@ -19,6 +19,7 @@ export class QuestionComponent implements OnInit {
   callParent(id: number) {
     this.selectAnswer.next(id);
   }
+
   constructor() { }
 
   ngOnInit(): void {

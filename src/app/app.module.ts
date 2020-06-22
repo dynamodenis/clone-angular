@@ -1,6 +1,8 @@
-// import { GlobalService } from 'src/app/services/global.service';
-import { QuizService } from './students/services/quiz.service';
-import { TeacherServiceService } from './teacher/service/teacher-service.service';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { QuizzesService } from './services/quizzes.service';
+import { EndpointsService } from './services/endpoints.service';
+import { CookieService } from 'ngx-cookie-service';
+import { GlobalService } from 'src/app/services/global.service';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,13 +10,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProblemQuestionComponent } from './teacher/problem-question/problem-question.component';
-import { AnswersComponent } from './teacher/answers/answers.component';
-import { FeedbackComponent } from './teacher/feedback/feedback.component';
-import { QuizListComponent } from './students/quiz-list/quiz-list.component';
-import { QuizDetailComponent } from './students/quiz-detail/quiz-detail.component';
-import { QuestionComponent } from './students/quiz-detail/question/question.component';
-
+import { QuizzesComponent } from './students/quizzes/quizzes.component';
+import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
+import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.component';
+import { QuestionComponent } from './students/quizzes/quiz-detail/question/question.component';
+import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/answer.component';
 
 
 @NgModule({
@@ -22,12 +22,12 @@ import { QuestionComponent } from './students/quiz-detail/question/question.comp
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    ProblemQuestionComponent,
-    AnswersComponent,
-    FeedbackComponent,
+    QuizzesComponent,
     QuizListComponent,
     QuizDetailComponent,
     QuestionComponent,
+    AnswerComponent,
+
   ],
 
   imports: [
@@ -36,9 +36,11 @@ import { QuestionComponent } from './students/quiz-detail/question/question.comp
   ],
 
   providers: [
-    TeacherServiceService,
-    QuizService,
-    // GlobalService,
+    GlobalService,
+    CookieService,
+    QuizzesService,
+    EndpointsService,
+    AuthGuardService,
 
   ],
   bootstrap: [AppComponent]
