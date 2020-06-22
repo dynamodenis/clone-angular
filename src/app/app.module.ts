@@ -10,6 +10,7 @@ import { QuiztestComponent } from './components/quiztest/quiztest.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswerComponent } from './components/question/answer/answer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     QuestionComponent,
     AnswerComponent,
     UserProfileComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
