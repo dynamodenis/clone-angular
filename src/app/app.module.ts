@@ -1,7 +1,11 @@
 import { EndpointsService } from './services/endpoints.service';
+import { AuthService } from './services/auth.service';
+import { InterceptorService } from './services/interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +15,6 @@ import { QuiztestComponent } from './components/quiztest/quiztest.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswerComponent } from './components/question/answer/answer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AuthComponent } from './components/auth/auth.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 
@@ -24,17 +27,21 @@ import { LoginComponent } from './components/auth/login/login.component';
     QuestionComponent,
     AnswerComponent,
     UserProfileComponent,
-    AuthComponent,
     RegisterComponent,
     LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     EndpointsService,
+    CookieService,
+    AuthService,
+    EndpointsService,
+    InterceptorService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,35 @@
-<p>login works!</p>
+<body>
+<div class="container">
+    <h1>Log In</h1>
+    <div class="user-auth-form">
+        <div class="input-field">
+            <input type="email" [formControl]="email" required>
+            <label>Email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" [formControl]="password" required>
+            <label>Password</label>
+        </div>
+        <div class="submit-button-sec">
+            <button class="submit-button" (click)="login()">Log In</button>
+        </div>
+        <div class="d-flex" style="justify-content:space-between; align-items:center;">
+            <div class="d-flex">
+            <input class="form-check-input ml-4 mr-1 mt-2" id="remember" name="remember" type="checkbox" value="y">
+            <span class="ml-5" style="font-size:15px;">Remember Me</span>
+            </div>
+            <small class="text-muted ml-2">
+              <a href="/reset_password"> Forgot Password?</a>
+            </small>
+        </div>
+        <div class="pt-3">
+            <small class="text-muted">
+                Don't Have An Account? <a class="ml-2" href="#"> Sign Up</a>
+            </small>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
