@@ -3,10 +3,10 @@ import { QuizzesService } from './services/quizzes.service';
 import { EndpointsService } from './services/endpoints.service';
 import { CookieService } from 'ngx-cookie-service';
 import { GlobalService } from 'src/app/services/global.service';
-import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     HeaderComponent,
     QuizzesComponent,
     QuizListComponent,
@@ -32,7 +31,8 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
 
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
 
   providers: [

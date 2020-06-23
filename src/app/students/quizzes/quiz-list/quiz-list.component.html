@@ -1,5 +1,5 @@
 <div *ngIf="quizzes != null" class="quizzes-container">
-    <h2>All Quizzes</h2>
+    <h2>All Questions</h2>
     <div *ngFor="let quiz of quizzes" class="quiz-item">
         <div>
             <div>
@@ -10,7 +10,7 @@
             </div>
                 <span>{{quiz.questions_count}} Questions</span>
                 <a [routerLink]="['/quizzes', quiz.slug]">
-                    <button class="btn btn-primary btn-lg">Start</button>
+                    <button class="btn btn-primary btn-lg">Begin question</button>
                 </a>
         </div>
     </div>
