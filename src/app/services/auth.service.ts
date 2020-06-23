@@ -1,4 +1,4 @@
-import { InterceptorService } from './interceptor.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 import { EndpointsService } from './endpoints.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -11,15 +11,19 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private endpoints: EndpointsService,
-    private interceptorService: InterceptorService
+    private tokenInterceptorService: TokenInterceptorService
   ) { }
 
-  register(body) {
-    return this.http.post(this.endpoints.registerMentor(), body, { headers: this.interceptorService.headers() });
+  mentorRegister(body) {
+    return this.http.post(this.endpoints.registerMentor(), body, { headers: this.tokenInterceptorService.headers() });
+  }
+
+  studentRegister(body) {
+    return this.http.post(this.endpoints.registerStudent(), body, { headers: this.tokenInterceptorService.headers() });
   }
 
   login(body) {
-    return this.http.post(this.endpoints.login(), body, { headers: this.interceptorService.headers() });
+    return this.http.post(this.endpoints.login(), body, { headers: this.tokenInterceptorService.headers() });
   }
 
 }

@@ -1,0 +1,30 @@
+<body>
+<div class="container">
+    <h1>Sign Up</h1>
+    <div class="user-auth-form">
+        <div class="input-field">
+            <input type="text"  [formControl]="username" required>
+            <label>Username</label>
+        </div>
+        <div class="input-field">
+            <input type="email" [formControl]="email" required>
+            <label>Email</label>
+        </div> 
+        <div class="input-field">
+            <input type="password" [formControl]="password" required>
+            <label>Password</label>
+        </div>
+        <div class="submit-button-sec">
+            <button class="submit-button" (click)="register()">Sign Up</button>
+        </div>
+        <div class="pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="#"> Log In</a>
+            </small>
+        </div>
+    </div>
+</div>
+</body>
+
+
+  

@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { InterceptorService } from './interceptor.service';
+import { TokenInterceptorService} from './token-interceptor.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EndpointsService {
 
-  constructor( private interceptorService: InterceptorService) { }
+  constructor(private tokenInterceptorService: TokenInterceptorService) { }
 
   registerMentor(){
-    return this.interceptorService.apiHost + 'mentor/register/';
-    // returns the path
+    return this.tokenInterceptorService.apiHost + 'auth/mentor/register/';
+  }
+
+  registerStudent() {
+    return this.tokenInterceptorService.apiHost + 'auth/student/register/';
   }
 
   login() {
-    return this.interceptorService.apiHost + 'login/';
+    return this.tokenInterceptorService.apiHost + 'auth/login/';
   }
 
 }
