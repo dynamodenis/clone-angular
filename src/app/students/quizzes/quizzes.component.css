@@ -1,4 +1,9 @@
-
+.jumbotron{
+  background-color: whitesmoke;
+}
 h3{
   margin-left: 160px;
+}
+.main{
+  text-transform: capitalize;
 }

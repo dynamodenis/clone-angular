@@ -10,11 +10,13 @@
     <div class="col-md-3" *ngFor="let quiz of quizzes">
       <div class="card">
         <div class="card-body">
-          <h2 class="text-info">{{quiz.name}}</h2>
+          <h2 class="main">{{quiz.name}}</h2>
           <p *ngIf="quiz.description; else elseBlock">{{quiz.description}}</p>
           <ng-template #elseBlock>No description</ng-template>
-          <div class="d-flex card-menu"><a href="{{quiz.slug}}" target="_blank" class="btn btn-sm btn-primary">Start Test
-            </a>
+          <div class="d-flex card-menu">
+           <a [routerLink]="['/quizzes', quiz.slug]">
+                    <button class="btn btn-outline-success btn-md">Start Test</button>
+                </a>
         </div><br>
       </div>
     </div>
