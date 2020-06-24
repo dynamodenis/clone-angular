@@ -1,9 +1,11 @@
 import { EndpointsService } from './services/endpoints.service';
+import { AuthService } from './services/auth.service';
+import { TokenInterceptorService} from './services/token-interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,9 +15,10 @@ import { QuiztestComponent } from './components/quiztest/quiztest.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswerComponent } from './components/question/answer/answer.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AuthenticationComponent } from './components/authentication/authentication.component';
-import { RegisterComponent } from './components/authentication/register/register.component';
-import { LoginComponent } from './components/authentication/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
+import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
+import { AuthGuardService } from './services/helpers/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -26,18 +29,23 @@ import { LoginComponent } from './components/authentication/login/login.componen
     QuestionComponent,
     AnswerComponent,
     UserProfileComponent,
-    AuthenticationComponent,
-    RegisterComponent,
     LoginComponent,
+    StudentRegisterComponent,
+    MentorRegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
-    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     EndpointsService,
+    CookieService,
+    AuthService,
+    EndpointsService,
+    TokenInterceptorService,
+    AuthGuardService,
   ],
   bootstrap: [AppComponent]
 })

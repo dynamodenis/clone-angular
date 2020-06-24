@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-success navbar-success fixed-top" >
+<nav class="navbar navbar-expand-md  navbar-default fixed-top" >
 <div style='margin-right:300px;'></div>
   <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -18,9 +18,23 @@
         <a class="nav-link" routerLink=""><i class='fa fa-envelope' style='color:white; font-weight:bold;'></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink=""><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
+        <a class="nav-link" routerLink="/"><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
       </li>
-
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/register"style="color:white; font-weight:bold" *ngIf="!authService.login()">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.login()">Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.login()">Logout</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register"style="color:white; font-weight:bold">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold">Sign In</a>
+      </li> 
     </ul>
   </div>
 </nav>
