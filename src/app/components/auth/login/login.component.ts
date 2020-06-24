@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TokenInterceptorService } from '../../../services/token-interceptor.service';
-import { EndpointsService} from '../../../services/endpoints.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -10,22 +9,35 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('');
-  password = new FormControl('');
+  loginForm: FormGroup;
+  submitted = false;
 
   constructor(
     private authService: AuthService,
     private tokenInterceptorService: TokenInterceptorService, ) { }
 
-  login(){
-    console.log('login button');
+  ngOnInit(){
+    this.createForm();
+  }
+
+  get f() { return this.loginForm.controls; }
+
+  private createForm(){
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    });
+  }
+
+  login() {
+    this.submitted = true;
+
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     const body = {
-      user: {
-        email: this.email.value,
-        password: this.password.value
-
-      }
-
+      user: this.loginForm.value
     };
 
     this.authService.login(body).subscribe((res) => {
@@ -33,9 +45,6 @@ export class LoginComponent implements OnInit {
       this.tokenInterceptorService.setToken(res['token']);
       console.log(res);
     });
-  }
-
-  ngOnInit(): void {
   }
 
 }

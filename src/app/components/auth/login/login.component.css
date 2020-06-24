@@ -27,7 +27,7 @@ h1{
     margin-bottom: 50px;
 }
 
-.input-field, .submit-button{
+.input-field, form .submit-button{
     margin: 25px;
     position: relative;
     height: 40px;
@@ -44,7 +44,7 @@ h1{
 }
 
 input:focus{
-    border: 1px solid #1DA1F2;
+    border: 1px solid #637c33;
 
 }
 
@@ -59,9 +59,8 @@ input:focus{
     transition: .4s;
 }
 
-input:focus ~ label,
-input:valid ~ label{
-    transform: translateY(-38px);
+input:focus ~ label{
+    transform: translateY(-35px);
     background: white;
     font-size: 16px;
     color: #637c33;
