@@ -1,0 +1,125 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrialTest</title>
+    
+
+
+</head>
+
+<body style="background-color:#cbd1d8;">
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light " style="background-color: #4e6522; width: 100%;">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">CodeMo</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Test <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Link</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div style="margin-top: 8px;">
+            <header style="background-color: white;">
+                <h1>TrialTest</h1>
+            </header>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 trialtest">
+                    <div class="row">
+                        <a class="btn btn-lg text-primary q1"><input type="radio"> Question One</a>
+                    </div>
+                    <div class="row">
+                        <a class="btn btn-lg text-primary q2"> <input type="radio"> Question Two </a>
+
+                    </div>
+                    <div class="row">
+                        <a class="btn btn-lg text-primary q3"><input type="radio"> Question Three</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 trialtest" style="margin-left: 5px;">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="row" id='q1'>
+                            <div class="col-sm-6">
+                                Question One<br>
+                                1. Is python an interpreted language?
+                                <br>
+                                <input type="radio" name="q1" value='yes'/> Yes<br>
+                                <input type="radio" name="q1" value='No'/> No
+
+                            </div>
+                            <div class="col-sm-6">
+
+                                <button type="button" class="btn btn-lg text-success q2">submit answer</button>
+                            </div>
+                        </div>
+                        <div class="row" id='q2' style="display:none;" >
+                            <div class="col-sm-6" *ngFor="let question of map">
+                                Question<br>
+                                <div *ngFor="let answer of answerArray">
+                                 <p>{{question.id}}  {{question.question}} <span style="color:#4e6522;">({{question.score}} Marks)</span></p> 
+                                 <p >{{answer.title}}</p>
+                                </div>           
+               
+                 
+                                    
+                                
+                            </div>
+                            <div class="col-sm-6">
+
+                                <button type="button" class="btn btn-lg text-success q3">submit answer</button>
+                            </div>
+                        </div>
+                        <div class="row" id='q3' style="display: none;">
+                            <div class="col-sm-6">
+                                Question Three<br>
+                                3. Code challenge(Read the instructions)<br>
+                                
+                                
+                            </div>
+                            <div class="col-sm-6">
+
+                                <button type="button" class="btn btn-lg text-success">submit answer</button>
+                            </div>
+                        </div>
+                        <input class="text-success" type="submit" value="submit Test">
+                    </form>
+
+                </div>
+
+                <div style="padding: 20px;margin-top: 25px;">
+                    <em># <strong>View Grouped Practice </strong></em>
+                    <div data-pym-src="https://www.jdoodle.com/embed/v0/2?stdin=0&arg=0"></div>
+                </div>
+            </div> 
+        </div >
+        <br>
+        <div id ="q3editor"style="text-align: center; ">
+        <iframe src="https://trinket.io/embed/python/30fa36ba17?font=15px" width="50%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+    </div>
+    
+    
+    
+
+    
+</body>
+
+</html>
