@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EndpointsService } from '../services/endpoints.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private endPoints: EndpointsService, private route: ActivatedRoute ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
+    let id = +this.route.snapshot.paramMap.get('id');
+
+    this.endPoints.getProfile(id).subscribe((res)=>{
+      console.log(res)
+      // this.profile=res;
+
+    })
   }
 
 }
