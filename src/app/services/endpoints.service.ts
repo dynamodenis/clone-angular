@@ -8,17 +8,5 @@ export class EndpointsService {
 
   constructor(private tokenInterceptorService: TokenInterceptorService) { }
 
-  // registerMentor(){
-  //   return this.tokenInterceptorService.apiHost + 'auth/mentor/register/';
-  // }
-
-  // registerStudent() {
-  //   return this.tokenInterceptorService.apiHost + 'auth/student/register/';
-  // }
-
-  // login() {
-  //   return this.tokenInterceptorService.apiHost + 'auth/login/';
-  // }
-
 }
 

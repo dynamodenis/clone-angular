@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MentorRegisterComponent} from './components/auth/mentor-register/mentor-register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
+import { QuestionComponent } from './components/question/question.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: MentorRegisterComponent},
   { path: 'user/register', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

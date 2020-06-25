@@ -35,20 +35,8 @@ export class AuthService {
   }
 
   getToken(){
-    return localStorage.getItem('Token')
+    console.log(localStorage.getItem('Token'))
   }
 
-
-  // mentorRegister(body) {
-  //   return this.http.post(this.endpoints.registerMentor(), body);
-  // }
-
-  // studentRegister(body) {
-  //   return this.http.post(this.endpoints.registerStudent(), body, {headers: this.tokenInterceptor.headers()});
-  // }
-
-  // login(body) {
-  //   return this.http.post(this.endpoints.login(), body, {headers: this.tokenInterceptor.headers()});
-  // }
 
 }
