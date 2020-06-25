@@ -22,6 +22,11 @@ import { MentorRegisterComponent } from './components/auth/mentor-register/mento
 import { AuthGuard } from './services/helpers/auth.guard';
 
 
+import { LandingComponent } from './dashboard/landing/landing.component';
+import { GlobalService } from './services/global.service';
+import { ProfileService } from './services/profile.service';
+import { SetquizComponent } from './mentor/setquiz/setquiz.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +40,8 @@ import { AuthGuard } from './services/helpers/auth.guard';
     LoginComponent,
     StudentRegisterComponent,
     MentorRegisterComponent,
+    LandingComponent,
+    SetquizComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,12 +55,17 @@ import { AuthGuard } from './services/helpers/auth.guard';
     AuthService,
     EndpointsService,
     AuthGuard,
+    EndpointsService,
+    GlobalService,
+    CookieService,
+    ProfileService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
     }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
