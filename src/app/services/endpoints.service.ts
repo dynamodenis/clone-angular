@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TokenInterceptorService} from './token-interceptor.service';
+import { TokenInterceptorService} from './helpers/token-interceptor.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +8,17 @@ export class EndpointsService {
 
   constructor(private tokenInterceptorService: TokenInterceptorService) { }
 
-  registerMentor(){
-    return this.tokenInterceptorService.apiHost + 'auth/mentor/register/';
-  }
+  // registerMentor(){
+  //   return this.tokenInterceptorService.apiHost + 'auth/mentor/register/';
+  // }
 
-  registerStudent() {
-    return this.tokenInterceptorService.apiHost + 'auth/student/register/';
-  }
+  // registerStudent() {
+  //   return this.tokenInterceptorService.apiHost + 'auth/student/register/';
+  // }
 
-  login() {
-    return this.tokenInterceptorService.apiHost + 'auth/login/';
-  }
+  // login() {
+  //   return this.tokenInterceptorService.apiHost + 'auth/login/';
+  // }
 
 }
 

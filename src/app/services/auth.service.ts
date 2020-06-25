@@ -1,29 +1,54 @@
-import { TokenInterceptorService } from './token-interceptor.service';
-import { EndpointsService } from './endpoints.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private _authUrl = 'http://127.0.0.1:8000/api/auth/'
 
   constructor(
     private http: HttpClient,
-    private endpoints: EndpointsService,
-    private tokenInterceptorService: TokenInterceptorService
+    private router: Router
   ) { }
 
-  mentorRegister(body) {
-    return this.http.post(this.endpoints.registerMentor(), body, { headers: this.tokenInterceptorService.headers() });
+  registerMentor(user){
+    return this.http.post<any>(this._authUrl + 'mentor/register/' , user)
   }
 
-  studentRegister(body) {
-    return this.http.post(this.endpoints.registerStudent(), body, { headers: this.tokenInterceptorService.headers() });
+  registerStudent(user){
+    return this.http.post<any>(this._authUrl + 'student/register/', user)
   }
 
-  login(body) {
-    return this.http.post(this.endpoints.login(), body, { headers: this.tokenInterceptorService.headers() });
+  login(user){
+    return this.http.post<any>(this._authUrl +'login/', user)
   }
+
+  loggedIn(){
+    return !!localStorage.getItem('Token')
+  }
+
+  logoutUser(){
+    localStorage.removeItem('Token')
+    this.router.navigate(['login'])
+  }
+
+  getToken(){
+    return localStorage.getItem('Token')
+  }
+
+
+  // mentorRegister(body) {
+  //   return this.http.post(this.endpoints.registerMentor(), body);
+  // }
+
+  // studentRegister(body) {
+  //   return this.http.post(this.endpoints.registerStudent(), body, {headers: this.tokenInterceptor.headers()});
+  // }
+
+  // login(body) {
+  //   return this.http.post(this.endpoints.login(), body, {headers: this.tokenInterceptor.headers()});
+  // }
 
 }

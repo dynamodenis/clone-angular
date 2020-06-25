@@ -1,11 +1,12 @@
 import { EndpointsService } from './services/endpoints.service';
 import { AuthService } from './services/auth.service';
-import { TokenInterceptorService} from './services/token-interceptor.service';
+import { TokenInterceptorService} from './services/helpers/token-interceptor.service';
+
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, ɵHttpInterceptingHandler } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-import { AuthGuardService } from './services/helpers/auth-guard.service';
+import { AuthGuard } from './services/helpers/auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -44,8 +47,12 @@ import { AuthGuardService } from './services/helpers/auth-guard.service';
     CookieService,
     AuthService,
     EndpointsService,
-    TokenInterceptorService,
-    AuthGuardService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
