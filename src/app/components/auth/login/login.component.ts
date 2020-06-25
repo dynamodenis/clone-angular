@@ -44,16 +44,10 @@ export class LoginComponent implements OnInit {
       user: this.loginForm.value
     };
 
-    // this.authService.login(body).subscribe((res) => {
-    //   // tslint:disable-next-line: no-string-literal
-    //   this.tokenInterceptorService.setToken(res['token']);
-    //   this.router.navigate(['/']);
-    //   console.log(res);
-    // });
     this.authService.login(body).subscribe(
       res => {
         localStorage.setItem('Token', res.user.token)
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
         console.log(res)
         console.log(res.user.token)
       }

@@ -8,18 +8,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  profile;
 
   constructor(private endPoints: EndpointsService, private route: ActivatedRoute ) { }
 
   ngOnInit(){
 
-    let id = +this.route.snapshot.paramMap.get('id');
+    // let id = +this.route.snapshot.paramMap.get('id');
+    let id = 3;
 
-    this.endPoints.getProfile(id).subscribe((res)=>{
-      console.log(res)
-      // this.profile=res;
+    this.endPoints.getProfile(id).subscribe(
+      res => this.profile = res
 
-    })
+      )
   }
 
 }

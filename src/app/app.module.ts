@@ -10,12 +10,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS, ɵHttpInterceptingHandler } from '
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LandingComponent} from './components/landing/landing.component';
+import { HeaderComponent } from './components/header/header.component';
 import { QuiztestComponent } from './components/quiztest/quiztest.component';
 import { QuestionComponent } from './components/question/question.component';
 import { AnswerComponent } from './components/question/answer/answer.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
@@ -35,6 +36,7 @@ import { AuthGuard } from './services/helpers/auth.guard';
     LoginComponent,
     StudentRegisterComponent,
     MentorRegisterComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

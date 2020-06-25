@@ -12,12 +12,12 @@ export class EndpointsService {
 
   apiHost = 'http://127.0.0.1:8000/api/';
 
-  constructor(private tokenInterceptorService: TokenInterceptorService, private http: HttpClient,) { }
+  constructor(private tokenInterceptorService: TokenInterceptorService, private http: HttpClient) { }
 
 
 
   getProfile(id:number){
-    return this.http.get(this.apiHost+'user/'+ id+'/profile')
+    return this.http.get<any>(this.apiHost+'user/'+ id+'/profile')
   }
 
 }
