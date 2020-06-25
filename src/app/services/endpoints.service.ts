@@ -7,6 +7,8 @@ import { GlobalService } from './global.service';
 })
 export class EndpointsService {
 
+  apiHost = 'http://127.0.0.1:8000/api/'
+
   constructor(private tokenInterceptorService: TokenInterceptorService,private globalService:GlobalService) { }
 
 

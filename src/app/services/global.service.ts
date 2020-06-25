@@ -13,7 +13,7 @@ export class GlobalService {
   ) { }
 
   apiHost = 'http://127.0.0.1:8000/api/';
-  httpHeaders = {'Content-Type': 'application/json','Authorization':'Token e887851bf3fd85375ec287f0cf977a60b1a29be8'};
+  httpHeaders = {'Content-Type': 'application/json'};
 
   headers(){
     const token=this.getToken();

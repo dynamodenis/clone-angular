@@ -27,7 +27,8 @@ export class UserProfileComponent implements OnInit {
     let id = +this.route.snapshot.paramMap.get('id');
 
     this.profileService.getProfile(id).subscribe((res)=>{
-      this.globalService.setToken(res['token']);
+      this.globalService.setToken('token');
+      console.log(res)
       this.profile=res;
 
     })
