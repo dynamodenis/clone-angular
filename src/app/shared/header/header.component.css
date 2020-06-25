@@ -5,14 +5,6 @@ a{
   font-size: 25px;
 
 }
-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-}
-nav{
-  background-color:#637C33
+.bg-success-bull {
+  background-color: #637C33;
 }

@@ -1,4 +1,3 @@
-import { AuthGuardService } from './guards/auth-guard.service';
 import { QuizzesService } from './services/quizzes.service';
 import { EndpointsService } from './services/endpoints.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -15,6 +14,7 @@ import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.compon
 import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.component';
 import { QuestionComponent } from './students/quizzes/quiz-detail/question/question.component';
 import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/answer.component';
+import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.component';
 
 
 @NgModule({
@@ -26,13 +26,14 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     QuizDetailComponent,
     QuestionComponent,
     AnswerComponent,
+    QuizScoresComponent,
 
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
 
   providers: [
@@ -40,7 +41,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     CookieService,
     QuizzesService,
     EndpointsService,
-    AuthGuardService,
 
   ],
   bootstrap: [AppComponent]

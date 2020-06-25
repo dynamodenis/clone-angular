@@ -10,14 +10,6 @@ export class EndpointsService {
       private globalService: GlobalService
   ) { }
 
-  login() {
-    return this.globalService.apiHost + 'auth/login/';
-  }
-
-  register() {
-    return this.globalService.apiHost + 'auth/register/';
-  }
-
   quizzes() {
     return this.globalService.apiHost + 'quizzes/';
   }

@@ -5,7 +5,8 @@
   align-items: center;
 }
 .question-number {
-  color: #ccc;
+  color: black;
+  font-weight: bold;
   margin-left: 15px;
 }
 
@@ -14,7 +15,7 @@ text-align: center;
 }
 
 button {
-  background-color: #ff8000;
+  background-color: #637C33 ;
   font-family: "Quicksand";
   padding: 8px 15px;
   font-weight: bold;
@@ -24,4 +25,7 @@ button {
   border-radius: 3px;
   margin: 20px 5px;
   cursor: pointer;
+}
+mat-form-field {
+  margin-right: 12px;
 }

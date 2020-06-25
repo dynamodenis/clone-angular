@@ -1,25 +1,9 @@
 <app-header></app-header>
 <div class="container-fluid">
-<div class="jumbotron">
-<h1><i class='fa fa-dashboard ml-5'>My Dashboard</i></h1>
-<h3 class="text-info" >Test your Knowledge</h3>
-</div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-3" *ngFor="let quiz of quizzes">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="main">{{quiz.name}}</h2>
-          <p *ngIf="quiz.description; else elseBlock">{{quiz.description}}</p>
-          <ng-template #elseBlock>No description</ng-template>
-          <div class="d-flex card-menu">
-           <a [routerLink]="['/quizzes', quiz.slug]">
-                    <button class="btn btn-outline-success btn-md">Start Test</button>
-                </a>
-        </div><br>
-      </div>
-    </div>
+  <div class="jumbotron">
+    <h2><i class='fa fa-dashboard ml-5'>My Dashboard</i></h2>
+    <h4 >Test your Knowledge</h4>
   </div>
 </div>
+<router-outlet></router-outlet>
 

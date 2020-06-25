@@ -2,7 +2,6 @@ import { QuizzesService } from './../../../services/quizzes.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-quiz-detail',
   templateUrl: './quiz-detail.component.html',
@@ -17,13 +16,17 @@ export class QuizDetailComponent implements OnInit {
   selectedAnswer: number;
   answers = [];
 
+  clickMessage = '';
 
-
+  onClickMe() {
+    this.clickMessage = 'Your results will be sent via Email!';
+  }
   constructor(
     private route: ActivatedRoute,
     private quizzesService: QuizzesService,
-    private router: Router
+    private router: Router,
   ) { }
+
 
   ngOnInit(): void {
     this.slug = this.route.snapshot.params.slug;
@@ -112,3 +115,4 @@ export class QuizDetailComponent implements OnInit {
   }
 
 }
+

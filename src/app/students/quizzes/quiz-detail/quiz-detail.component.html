@@ -1,4 +1,5 @@
 <div>
+<h6 class='ml-5 text-muted'>Test taken on {{quiz.timestamp| date}} </h6>
     <div class="question-wrapper">
         <div *ngIf="quiz!=null" >
             <div class="question-number">
@@ -9,10 +10,14 @@
     </div>
 
     <div class="buttons" *ngIf="quiz!=null">
-        <button (click)="previous()">
-            Previous
-        </button>
-        <button  (click)="next()" [innerHtml]="currentIndex == quiz.question_set.length - 1 ? 'Submit' : 'Next'">
-        </button>
+        <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="previous()">Previous
+        </button></a>
+         <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="onClickMe()" [innerHtml]="currentIndex == quiz.question_set.length - 1 ? 'Submit' : 'Next'" > </button>
+         {{clickMessage}}
+         </a>
+
+        <br>
     </div>
 </div>
+
+
