@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   getToken(){
-    console.log(localStorage.getItem('Token'))
+    return localStorage.getItem('Token')
   }
 
 

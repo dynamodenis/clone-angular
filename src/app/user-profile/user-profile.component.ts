@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../services/profile.service';
 import {  ActivatedRoute, ParamMap,Params } from '@angular/router';
 import { GlobalService } from '../services/global.service';
+import { EndpointsService } from '../services/endpoints.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +12,7 @@ export class UserProfileComponent implements OnInit {
   profile;
   id:number
 
-  constructor(private profileService:ProfileService,private route: ActivatedRoute, private globalService:GlobalService) { }
+  constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private globalService:GlobalService) { }
 
   ngOnInit(){
     
@@ -26,8 +26,8 @@ export class UserProfileComponent implements OnInit {
 
     let id = +this.route.snapshot.paramMap.get('id');
 
-    this.profileService.getProfile(id).subscribe((res)=>{
-      this.globalService.setToken('token');
+    this.endpointsService.getProfile(id).subscribe(res=>{
+      // localStorage.setItem('Token', res.user.token)
       console.log(res)
       this.profile=res;
 
