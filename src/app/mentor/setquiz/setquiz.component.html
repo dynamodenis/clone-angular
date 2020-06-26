@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Yanone Kaffeesatz">
+
+<div class="container quiz">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <legend class="legendheading">Create a Test</legend>
+                <div>
+                    <label> Class/Topic/Group:</label>
+                    <input type="text" placeholder="Topic/Class/Group..." class="form-control" [formControl]='quiz'>
+                    <small id="emailHelp" class="form-text text-muted">This entails what the questions are all about or the people taking the test.</small>
+                </div>
+                <div>
+                    <legend>Set Question</legend>
+                    <label>Question :</label>
+                    <textarea placeholder="The Question" id="" cols="30" rows="10" [formControl]='question'></textarea>
+                </div>
+                <div>
+                    <legend>Set Answers</legend>
+                    <input type="text" placeholder="Answer" class="form-control" [formControl]='answer1'><br>
+                    <input type="text" placeholder="Answer" class="form-control" [formControl]='answer2'><br>
+                    <input type="text" placeholder="Answer" class="form-control" [formControl]='answer3'><br>
+                    <input type="text" placeholder="Answer" class="form-control" [formControl]='answer4'><br>
+                    <input type="text" placeholder="Answer" class="form-control" [formControl]='answer5'><br>
+                </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

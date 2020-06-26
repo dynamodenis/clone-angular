@@ -1,0 +1,12 @@
+.legendheading{
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-family: 'Yanone Kaffeesatz',serif;
+    font-size: 40px;
+
+}
+.quiz{
+    width: 100%;
+}
+
