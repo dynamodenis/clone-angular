@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { TokenInterceptorService } from '../../../services/helpers/token-interceptor.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -16,7 +14,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private tokenInterceptorService: TokenInterceptorService, 
     private router: Router
     ) { }
 
@@ -47,7 +44,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(body).subscribe(
       res => {
         localStorage.setItem('Token', res.user.token)
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
         console.log(res)
         console.log(res.user.token)
       }

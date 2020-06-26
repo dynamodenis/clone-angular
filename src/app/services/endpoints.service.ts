@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TokenInterceptorService} from './helpers/token-interceptor.service';
+import { TokenInterceptorService} from '../helpers/token-interceptor.service';
 
 
 
@@ -17,7 +17,7 @@ export class EndpointsService {
 
 
   getProfile(id:number){
-    return this.http.get<any>(this.apiHost+'user/'+ id+'/profile')
+    return this.http.get(this.apiHost+'user/'+ `${id}`+'/profile')
   }
 
 }

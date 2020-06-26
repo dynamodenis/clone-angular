@@ -1,6 +1,6 @@
 import { EndpointsService } from './services/endpoints.service';
 import { AuthService } from './services/auth.service';
-import { TokenInterceptorService} from './services/helpers/token-interceptor.service';
+import { TokenInterceptorService} from './helpers/token-interceptor.service';
 
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +20,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-import { AuthGuard } from './services/helpers/auth.guard';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 
