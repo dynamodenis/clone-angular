@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -11,14 +11,21 @@ import { AuthService } from '../../../services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  returnUrl: string;
 
   constructor(
     private authService: AuthService,
-    private router: Router
-    ) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    ) { 
+      if (this.authService.currentUserValue) { 
+        this.router.navigate(['dashboard']);
+      }
+    }
 
   ngOnInit(){
     this.createForm();
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
   }
 
   get f() { return this.loginForm.controls; }
@@ -43,8 +50,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(body).subscribe(
       res => {
-        localStorage.setItem('Token', res.user.token)
-        this.router.navigate(['dashboard']);
+        this.router.navigate([this.returnUrl]);
         console.log(res)
         console.log(res.user.token)
       }

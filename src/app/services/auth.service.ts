@@ -29,13 +29,10 @@ export class AuthService {
     return this.http.post<any>(this._authUrl + 'student/register/', user)
   }
 
-  // login(user){
-  //   return this.http.post<any>(this._authUrl +'login/', user)
-  // }
   public get currentUserValue(){
     return this.currentUserSubject.value;
   }
-  
+
   login(body){
     return this.http.post<any>(this._authUrl +'login/', body).pipe(map(userInfo => {
       let token =  userInfo.user.token
@@ -57,6 +54,4 @@ export class AuthService {
   getToken(){
     console.log(localStorage.getItem('Token'))
   }
-
-
 }
