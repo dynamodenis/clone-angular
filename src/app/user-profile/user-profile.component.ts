@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  ActivatedRoute, ParamMap,Params } from '@angular/router';
+import {  ActivatedRoute, ParamMap,Params, Router } from '@angular/router';
 import { GlobalService } from '../services/global.service';
 import { EndpointsService } from '../services/endpoints.service';
 
@@ -12,7 +12,12 @@ export class UserProfileComponent implements OnInit {
   profile;
   id:number
 
-  constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private globalService:GlobalService) { }
+  constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private globalService:GlobalService, private router:Router) { }
+
+  onClick(id){
+    this.router.navigate(['user/update',id])
+  }
+
 
   ngOnInit(){
     

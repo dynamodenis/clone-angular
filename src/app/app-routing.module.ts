@@ -10,6 +10,7 @@ import { MentorRegisterComponent} from './components/auth/mentor-register/mentor
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { QuestionComponent } from './components/question/question.component';
+import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
 
 
 
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path: 'user/register', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
-  {path:'user/:id/profile', component: UserProfileComponent, canActivate:[AuthGuard]},
+  { path:'user/:id/profile', component: UserProfileComponent, canActivate:[AuthGuard]},
+  // { path:'user/:id/profile/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
+  { path:'user/update/:id', component: UpdateProfileComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({

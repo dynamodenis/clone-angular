@@ -26,6 +26,7 @@ import { LandingComponent } from './dashboard/landing/landing.component';
 import { GlobalService } from './services/global.service';
 import { ProfileService } from './services/profile.service';
 import { SetquizComponent } from './mentor/setquiz/setquiz.component';
+import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SetquizComponent } from './mentor/setquiz/setquiz.component';
     MentorRegisterComponent,
     LandingComponent,
     SetquizComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+
+<div class="conatiner body mt-5">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <legend>Update Profile</legend>
+            <form [formGroup]='updateForm'>
+                <div >
+                    <label >Bio</label>
+                    <input type="text" placeholder="Bio..." formControlName='bio' class="form-control">
+                </div>
+                <div>
+                    <label >Location</label>
+                    <input type="text" placeholder="Location..." formControlName='location' class="form-control">
+                </div>
+                <div>
+                    <label >Education</label>
+                    <input type="text" placeholder="Education..." formControlName='education' class="form-control">
+                </div>
+                <div class="updateButtons mt-2">
+                    <a class="btn btn-outline-success btn-sm mr-2 update">Update</a>
+                    <a class="btn btn-outline-info btn-sm backProfile" >Back To Profile</a>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
