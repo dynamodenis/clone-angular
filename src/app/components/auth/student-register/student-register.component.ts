@@ -48,10 +48,7 @@ export class StudentRegisterComponent implements OnInit {
 
     this.authService.registerStudent(body).subscribe(
       res => {
-        localStorage.setItem('Bearer', res.user.token)
         this.router.navigate(['/login']);
-        console.log(res)
-        console.log(res.user.token)
       }
     )
 
