@@ -1,6 +1,7 @@
 import { QuizzesService } from './../../../services/quizzes.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+// import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-quiz-detail',
@@ -16,15 +17,13 @@ export class QuizDetailComponent implements OnInit {
   selectedAnswer: number;
   answers = [];
 
-  clickMessage = '';
 
-  onClickMe() {
-    this.clickMessage = 'Your results will be sent via Email!';
-  }
   constructor(
     private route: ActivatedRoute,
     private quizzesService: QuizzesService,
     private router: Router,
+    // tslint:disable-next-line: variable-name
+    // private _snackBar: MatSnackBar
   ) { }
 
 
@@ -113,6 +112,11 @@ export class QuizDetailComponent implements OnInit {
       this.selectedAnswer = null;
     }
   }
-
+  // openSnackBar(message: string, action: string) {
+  //   this._snackBar.open(message, action, {
+  //     duration: 2000,
+  //   });
+  // }
 }
+
 

@@ -6,6 +6,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+// import { MatSnackBarModule } from '@angular/material/snack-bar';
+// import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,14 +28,22 @@ import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.
     QuizDetailComponent,
     QuestionComponent,
     AnswerComponent,
-    QuizScoresComponent,
-
+    QuizScoresComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    // MatSnackBarModule,
+    // MatFormFieldModule
+  ],
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    // MatSnackBarModule,
+    // MatFormFieldModule
   ],
 
   providers: [

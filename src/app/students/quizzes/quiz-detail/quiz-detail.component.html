@@ -12,8 +12,7 @@
     <div class="buttons" *ngIf="quiz!=null">
         <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="previous()">Previous
         </button></a>
-         <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="onClickMe()" [innerHtml]="currentIndex == quiz.question_set.length - 1 ? 'Submit' : 'Next'" > </button>
-         {{clickMessage}}
+         <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="next()" [innerHtml]="currentIndex == quiz.question_set.length - 1 ? 'Submit' : 'Next'" > </button>
          </a>
 
         <br>
