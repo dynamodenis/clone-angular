@@ -20,8 +20,8 @@ const routes: Routes = [
   { path: 'user/register', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
-  { path:'user/:id/profile', component: UserProfileComponent, canActivate:[AuthGuard]},
-  // { path:'user/:id/profile/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
+  { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
+  // { path:'user/:id', component: UserProfileComponent, canActivate:[AuthGuard]},
   { path:'user/update/:id', component: UpdateProfileComponent, canActivate:[AuthGuard]},
 ];
 

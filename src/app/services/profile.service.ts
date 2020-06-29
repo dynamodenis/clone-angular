@@ -18,7 +18,7 @@ export class ProfileService {
   // getProfile(id: number){
   //   return this.http.get(this.endpoints.profile(id),{headers: this.globalService.headers()})
   // }
-  getProfile(id:number){
-    return this.http.get(this.apiHost+'user/'+id+'/profile/')
-  }
+  // getProfile(id:number){
+  //   return this.http.get(this.apiHost+'user/'+id+'/profile/')
+  // }
 }

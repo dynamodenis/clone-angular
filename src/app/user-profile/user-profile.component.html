@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2"></div>
                     <div class="col-lg-8 col-md-8 text-center">
-                        <img src="{{profile.picture}}" class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
+                        <img src={{picture}}  alt="" class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
                     </div>
                     <div class="col-lg-2 col-md-2"></div>
                 </div>
@@ -25,6 +25,12 @@
                             <div *ngIf='profile.education'>
                                 <p class="card-text"><span id="about-info" style="font-weight: bolder;">Education:</span> <span>{{profile.education}}</span> </p>
                             </div>
+                            <div *ngIf='profile.user.is_mentor'>
+                                <div *ngIf='profile.company'>
+                                    <p class="card-text"><span id="about-info" style="font-weight: bolder;">Company:</span> <span>{{profile.company}}</span> </p>
+                                </div>
+                            </div>
+
                         </div>
                            <a  class="btn btn-outline-success btn-sm text-center update" (click)='onClick(profile.user.id)'>Update Profile</a>             
                     </div>
