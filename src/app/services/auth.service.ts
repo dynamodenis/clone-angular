@@ -17,8 +17,8 @@ export class AuthService {
     private http: HttpClient,
     private router: Router
   ) { 
-    this.currentUserSubject = new BehaviorSubject<any>(localStorage.getItem('Token'));
-    this.currentUser = this.currentUserSubject.asObservable();
+    // this.currentUserSubject = new BehaviorSubject<any>(localStorage.getItem('Bearer'));
+    // this.currentUser = this.currentUserSubject.asObservable();
   }
 
   registerMentor(user){
@@ -29,29 +29,33 @@ export class AuthService {
     return this.http.post<any>(this._authUrl + 'student/register/', user)
   }
 
-  public get currentUserValue(){
-    return this.currentUserSubject.value;
-  }
+  // public get currentUserValue(){
+  //   return this.currentUserSubject.value;
+  // }
 
-  login(body){
-    return this.http.post<any>(this._authUrl +'login/', body).pipe(map(userInfo => {
-      let token =  userInfo.user.token
-      localStorage.setItem('Token', token);
-      this.currentUserSubject.next(userInfo);
-      return userInfo
-    }));
+  // login(body){
+  //   return this.http.post<any>(this._authUrl +'login/', body).pipe(map(userInfo => {
+  //     let token =  userInfo.user.token
+  //     localStorage.setItem('Bearer', token);
+  //     this.currentUserSubject.next(userInfo);
+  //     return userInfo
+  //   }));
+  // }
+  login(user){
+    return this.http.post<any>(this._authUrl + 'login/', user)
   }
 
   loggedIn(){
-    return !!localStorage.getItem('Token')
+    return !!localStorage.getItem('Bearer')
   }
 
   logoutUser(){
-    localStorage.removeItem('Token')
+    localStorage.removeItem('Bearer')
     this.currentUserSubject.next(null);
   }
 
   getToken(){
-    console.log(localStorage.getItem('Token'))
+    // console.log(localStorage.getItem('Bearer'))
+    return localStorage.getItem('Bearer')
   }
 }

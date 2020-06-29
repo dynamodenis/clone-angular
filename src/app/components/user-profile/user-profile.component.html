@@ -2,31 +2,42 @@
 
 
 <div id="about" class="offset">
-    <div class="jumbotron mt-4" id="about">
-    <div class="container-fluid">
-        <div class="legend-underline"></div>
-        <div class="row">
-            <div class="col-lg-2 col-md-2"></div>
-            <div class="col-lg-8 col-md-8 text-center">
-                <img class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
-            </div>
-            <div class="col-lg-2 col-md-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-2 col-md-2"></div>
-            <div class="col-lg-8 col-md-8 text-center">
-                <h2 class="card-title">JOHN DOE</h2> <hr>
-                <p class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>johndoe@gmail.com <span></span> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>Nairobi,Kenya</p>
-                <div>
-                <p class="card-text"><span id="about-info" style="font-weight: bolder;">About Me:</span> <span>Am a software developer</span> </p>
-                <p class="card-text"><span id="about-info" style="font-weight: bolder;">Education:</span> <span>Sofware development student in Moringa School</span> </p>
+    <div *ngIf='profile != null'>
+        <div class="jumbotron mt-4" id="about">
+            <div class="container-fluid">
+                <div class="legend-underline"></div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="col-lg-8 col-md-8 text-center">
+                        <img src={{picture}}  alt="" class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
                 </div>
-                                
+                <div class="row">
+                    <div class="col-lg-2 col-md-2"></div>
+                    <div class="col-lg-8 col-md-8 text-center">
+                        <h2 class="card-title">{{profile.user.username}}</h2> <hr>
+                        <div class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>{{profile.user.email}} <span></span> <div *ngIf='profile.location'> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>Nairobi,Kenya </div></div>
+                        <div>
+                            <div *ngIf='profile.bio'>
+                                <p class="card-text"><span id="about-info" style="font-weight: bolder;">About Me:</span> <span>{{profile.bio}}</span> </p>
+                            </div>
+                            <div *ngIf='profile.education'>
+                                <p class="card-text"><span id="about-info" style="font-weight: bolder;">Education:</span> <span>{{profile.education}}</span> </p>
+                            </div>
+                            <div *ngIf='profile.user.is_mentor'>
+                                <div *ngIf='profile.company'>
+                                    <p class="card-text"><span id="about-info" style="font-weight: bolder;">Company:</span> <span>{{profile.company}}</span> </p>
+                                </div>
+                            </div>
+
+                        </div>
+                           <a  class="btn btn-outline-success btn-sm text-center update" (click)='onClick(profile.user.id)'>Update Profile</a>             
+                    </div>
+                    <div class="col-lg-2 col-md-2"></div>
+                </div>
             </div>
-            <div class="col-lg-2 col-md-2"></div>
         </div>
-    </div>
     </div>
 </div>
-
-
+<app-update-profile></app-update-profile>

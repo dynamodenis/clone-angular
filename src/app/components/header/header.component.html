@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md  navbar-default fixed-top" *ngIf="currentUser">
+<nav class="navbar navbar-expand-md  navbar-default fixed-top">
 <div style='margin-right:300px;'></div>
   <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -21,7 +21,7 @@
         <a class="nav-link" routerLink="/"><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/register"style="color:white; font-weight:bold" *ngIf="!authService.loggedIn()">Sign Up</a>
+        <a class="nav-link" routerLink="/register" style="color:white; font-weight:bold" *ngIf="!authService.loggedIn()">Sign Up</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.loggedIn()">Sign In</a>

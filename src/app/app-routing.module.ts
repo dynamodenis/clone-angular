@@ -16,11 +16,14 @@ import { LandingComponent } from './components/landing/landing.component';
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: MentorRegisterComponent},
   { path: 'user/register', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
-  {path:'user/:id/profile', component: UserProfileComponent, canActivate:[AuthGuard]},
+  { path: 'challenge', component: QuestionComponent},
+  { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
+  // { path:'user', component: UserProfileComponent},
 ];
 
 @NgModule({
