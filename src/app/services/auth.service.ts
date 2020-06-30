@@ -24,7 +24,7 @@ export class AuthService {
     return this.http.post<any>(this._authUrl + 'login/', user,)
   }
   loggedIn(){
-    return !!localStorage.getItem('Bearer')
+    return !!localStorage.getItem('Token')
   }
   logoutUser(){
     localStorage.removeItem('Bearer')
