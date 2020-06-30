@@ -23,7 +23,9 @@ import { UpdateProfileComponent } from './user-profile/update-profile/update-pro
 import { AuthGuard } from './services/helpers/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-
+import { GlobalService } from './services/global.service';
+import { ProfileService } from './services/profile.service';
+import { SetquizComponent } from './mentor/setquiz/setquiz.component';
 
 
 @NgModule({
@@ -53,12 +55,17 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AuthService,
     EndpointsService,
     AuthGuard,
+    EndpointsService,
+    GlobalService,
+    CookieService,
+    ProfileService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
     }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

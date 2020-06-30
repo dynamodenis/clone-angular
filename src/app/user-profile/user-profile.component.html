@@ -9,13 +9,18 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2"></div>
                     <div class="col-lg-8 col-md-8 text-center">
+<<<<<<< HEAD
                         <img src={{picture}}  alt="" class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
+=======
+                        <img src="{{profile.picture}}" class="img-circle rounded-circle" id="profile" style="width: 150px; height: 150px; background-color: black;">
+>>>>>>> 7ed7eb7... Feature/user profile (#5)
                     </div>
                     <div class="col-lg-2 col-md-2"></div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2"></div>
                     <div class="col-lg-8 col-md-8 text-center">
+<<<<<<< HEAD
                         <h2 class="card-title">{{profile.user.username}}</h2> <hr>
                         <div class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>{{profile.user.email}} <span></span> <div *ngIf='profile.location'> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>{{profile.location}} </div></div>
                         <div>
@@ -33,6 +38,19 @@
 
                         </div>
                            <a  class="btn btn-outline-success btn-sm text-center update" (click)='onClick(profile.user.id)'>Update Profile</a>             
+=======
+                        <h2 class="card-title">{{profile.user}}</h2> <hr>
+                        <div class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>{{profile.user.email}} <span></span> <div *ngIf='profile.location'> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>Nairobi,Kenya </div></div>
+                        <div>
+                        <div *ngIf='profile.bio'>
+                            <p class="card-text"><span id="about-info" style="font-weight: bolder;">About Me:</span> <span>{{profile.bio}}</span> </p>
+                        </div>
+                        <div *ngIf='profile.education'>
+                            <p class="card-text"><span id="about-info" style="font-weight: bolder;">Education:</span> <span>{{profile.education}}</span> </p>
+                        </div>
+                        </div>
+                                        
+>>>>>>> 7ed7eb7... Feature/user profile (#5)
                     </div>
                     <div class="col-lg-2 col-md-2"></div>
                 </div>
