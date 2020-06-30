@@ -1,30 +1,25 @@
-<body>
-    <div class="container">
-        <h1>Log In</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="login()" >
-            <div class="form-group input-field text-center">
-                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email" />
-                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                </div>
+<div class="signup-form">
+    <h1>Log In</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group input-field">
+            <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
             </div>
-            <div class="form-group input-field">
-                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" />
-                <!-- <label>Password</label> -->
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                    <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
-                </div>
-            </div>
-            <div class="form-group submit-button-sec">
-                <button class="btn submit-button" [disabled]="loginForm.invalid" >Login</button>
-            </div>
-        </form>
-        <div class="pt-3">
-            <small class="text-muted">
-                Don't Have An Account? <a class="ml-2" routerLink="/register">Sign Up</a>
-            </small>
         </div>
+        <div class="form-group input-field">
+            <input type="password" placeholder="Password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+            </div>
+        </div>
+        <input type="submit" value="Sign In" class="signup-btn" [disabled]="loginForm.invalid">
+    </form>
+    <div class="sign-option">
+        Don't Have an Account? <a class="ml-2" routerLink="/register"> Sign Up</a>
     </div>
-</body>
+</div>

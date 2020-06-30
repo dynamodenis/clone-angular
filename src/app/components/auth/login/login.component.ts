@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
-import { TokenInterceptorService } from '../../../services/helpers/token-interceptor.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -13,15 +11,21 @@ import { AuthService } from '../../../services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  returnUrl: string;
 
   constructor(
     private authService: AuthService,
-    private tokenInterceptorService: TokenInterceptorService, 
-    private router: Router
-    ) { }
+    private router: Router,
+    private route: ActivatedRoute,
+    ) { 
+      if (this.authService.currentUserValue) { 
+        this.router.navigate(['dashboard']);
+      }
+    }
 
   ngOnInit(){
     this.createForm();
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
   }
 
   get f() { return this.loginForm.controls; }
@@ -40,22 +44,12 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const body = {
-      user: this.loginForm.value
-    };
+    const body = this.loginForm.value
 
-    // this.authService.login(body).subscribe((res) => {
-    //   // tslint:disable-next-line: no-string-literal
-    //   this.tokenInterceptorService.setToken(res['token']);
-    //   this.router.navigate(['/']);
-    //   console.log(res);
-    // });
+
     this.authService.login(body).subscribe(
       res => {
-        localStorage.setItem('Token', res.user.token)
-        this.router.navigate(['/']);
-        console.log(res)
-        console.log(res.user.token)
+        this.router.navigate([this.returnUrl]);
       }
     )
 
