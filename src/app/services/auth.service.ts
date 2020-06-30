@@ -21,8 +21,17 @@ export class AuthService {
     return this.http.post<any>(this._authUrl + 'student/register/', user)
   }
   login(user){
-    return this.http.post<any>(this._authUrl + 'login/', user,)
+    return this.http.post<any>(this._authUrl + 'login/', user)
   }
+
+  getUser(){
+    return this.http.get<any>(this._authUrl + 'user/')
+  }
+
+  updateUser(user){
+    return this.http.get<any>(this._authUrl + 'user/',user)
+  }
+
   loggedIn(){
     return !!localStorage.getItem('Token')
   }

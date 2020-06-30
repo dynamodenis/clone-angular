@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TokenInterceptorService} from '../../../services/helpers/token-interceptor.service';
 import { AuthService } from '../../../services/auth.service';
 
 
@@ -10,13 +9,13 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './mentor-register.component.html',
   styleUrls: ['./mentor-register.component.css']
 })
+
 export class MentorRegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
   constructor(
     private authService: AuthService,
-    private tokenInterceptorService: TokenInterceptorService,
     private router: Router
 
   ) { }
@@ -51,22 +50,9 @@ export class MentorRegisterComponent implements OnInit {
 
     this.authService.registerMentor(body).subscribe(
       res => {
-        localStorage.setItem('Token', res.user.token)
         this.router.navigate(['/login']);
-        console.log(res)
-        console.log(res.user.token)
       }
     )
-
-    
-
-    // this.authService.mentorRegister(body).subscribe((res) => {
-    //   // tslint:disable-next-line: no-string-literal
-    //   this.tokenInterceptorService.setToken(res['token']);
-    //   this.router.navigate(['/login']);
-    //   console.log(res);
-    // });
-    
 
     };
 
