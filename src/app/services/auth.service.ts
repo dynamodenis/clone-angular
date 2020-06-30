@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GlobalService } from './global.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +42,7 @@ export class AuthService {
 
 
   loggedIn(){
-    return !!localStorage.getItem('Token')
+    return !!localStorage.getItem('Bearer')
   }
 
   logoutUser(){
@@ -54,7 +51,6 @@ export class AuthService {
   }
 
   getToken(){
-    // console.log(localStorage.getItem('Bearer'))
     return localStorage.getItem('Bearer')
   }
 }

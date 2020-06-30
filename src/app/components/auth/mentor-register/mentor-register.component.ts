@@ -9,6 +9,7 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './mentor-register.component.html',
   styleUrls: ['./mentor-register.component.css']
 })
+
 export class MentorRegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;

@@ -16,7 +16,6 @@ import { UpdateProfileComponent } from './user-profile/update-profile/update-pro
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: MentorRegisterComponent},
   { path: 'user/register', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },

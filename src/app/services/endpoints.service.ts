@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { TokenInterceptorService} from './helpers/token-interceptor.service';
+import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http'
 import { GlobalService } from './global.service';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class EndpointsService {
+
   apiHost = 'http://127.0.0.1:8000/api/';
   profileUrl="http://127.0.0.1:8000";
 
@@ -29,5 +29,3 @@ export class EndpointsService {
     return this.http.put(this.apiHost+'user/profile/',body)
   }
 }
-
-
