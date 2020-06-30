@@ -45,7 +45,7 @@ export class AuthService {
 
 
   loggedIn(){
-    return !!localStorage.getItem('Bearer')
+    return !!localStorage.getItem('Token')
   }
 
   logoutUser(){
