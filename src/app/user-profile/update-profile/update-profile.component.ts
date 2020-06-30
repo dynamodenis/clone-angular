@@ -26,19 +26,20 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private endpointsService:EndpointsService,private route: ActivatedRoute,private router:Router) { }
 
   // GOES BACK TO THE PROFILE
-  toProfile(profile){
-    this.router.navigate(['user',profile])
+  toProfile(){
+    this.router.navigate(['user'])
   }
   // ONSUBMIT FORM
   updateProfile(){
     this.endpointsService.updateProfile(this.updateForm.value).subscribe(res=>{
-      this.router.navigate(['/user/' + this.profile.user.id]);
+      this.router.navigate(['/user']);
     })
   }
 
 
   // ON PAGE LOAD
   ngOnInit(): void {
+    let id = +this.route.snapshot.paramMap.get('id');
 
     this.endpointsService.getProfile().subscribe(res=>{
       // localStorage.setItem('Token', res.user.token)

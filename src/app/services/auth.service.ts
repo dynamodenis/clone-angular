@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { GlobalService } from './global.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -51,11 +54,7 @@ export class AuthService {
   }
 
   getToken(){
-<<<<<<< HEAD
     // console.log(localStorage.getItem('Bearer'))
     return localStorage.getItem('Bearer')
-=======
-    return localStorage.getItem('Token')
->>>>>>> 7ed7eb7... Feature/user profile (#5)
   }
 }

@@ -41,7 +41,8 @@ import { SetquizComponent } from './mentor/setquiz/setquiz.component';
     StudentRegisterComponent,
     MentorRegisterComponent,
     LandingComponent,
-    UpdateProfileComponent
+    SetquizComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     BrowserModule,

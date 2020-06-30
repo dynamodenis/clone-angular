@@ -9,6 +9,8 @@ import { StudentRegisterComponent } from './components/auth/student-register/stu
 import { QuestionComponent } from './components/question/question.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LandingComponent } from './dashboard/landing/landing.component';
+import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
   { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
+  // { path:'user/:id', component: UserProfileComponent, canActivate:[AuthGuard]},
+  { path:'user/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({
