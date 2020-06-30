@@ -1,37 +1,22 @@
-<nav class="navbar navbar-expand-md  navbar-default fixed-top" >
-<div style='margin-right:300px;'></div>
-  <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
+<!-- Navbar -->
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-success bg-success-bull" >
+  <div style='margin-right: 200px;'></div>
+    <a class="navbar-brand ml-5" routerLink="quizzes/all">CodeMo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" routerLink="quizzes/all" routerLinkActive='active' style='margin-right: 200px;'> PRACTICE<span
+              class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" routerLink="quote" routerLinkActive='active' ><i class='fa fa-search'><u>TM</u></i></a>
+          <a class="nav-item nav-link" routerLink="" routerLinkActive='active' ><i class='fa fa-envelope'></i></a>
+          <a class="nav-item nav-link" routerLink="" routerLinkActive='active' ><i class='fa fa-user'></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-      <li class="nav-item" style='margin-right:200px;'>
-        <a class="nav-link" routerLink="/quizzes/all" style='color:white;'><b>PRACTICE</b></a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" routerLink=""><i class='fa fa-search' style='color:white; font-weight:bold;'><u> Search</u></i></a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" routerLink=""><i class='fa fa-envelope' style='color:white; font-weight:bold;'></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/"><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/register"style="color:white; font-weight:bold" *ngIf="!authService.loggedIn()">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.loggedIn()">Sign In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  >Profile</a>
-      </li>
-    </ul>
-  </div>
-</nav>

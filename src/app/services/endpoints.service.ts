@@ -25,4 +25,7 @@ export class EndpointsService {
   submitQuiz(slug: string) {
     return this.globalService.apiHost + 'quizzes/' + slug + '/submit/';
   }
+  addQuiz(slug: string) {
+    return this.globalService.apiHost + 'quizzes/';
+  }
 }
