@@ -27,6 +27,7 @@ import { GlobalService } from './services/global.service';
 import { ProfileService } from './services/profile.service';
 import { SetquizComponent } from './mentor/setquiz/setquiz.component';
 import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { UpdateProfileComponent } from './user-profile/update-profile/update-pro
     LandingComponent,
     SetquizComponent,
     UpdateProfileComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,

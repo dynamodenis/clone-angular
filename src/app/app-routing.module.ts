@@ -10,19 +10,22 @@ import { QuestionComponent } from './components/question/question.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LandingComponent } from './dashboard/landing/landing.component';
 import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: LandingComponent},
+  {path:'', redirectTo:'/login', pathMatch:'full'},
+  { path: 'register', component: LandingComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  { path: 'register', component: MentorRegisterComponent},
-  { path: 'user/register', component: StudentRegisterComponent},
+  { path: 'register/mentor', component: MentorRegisterComponent},
+  { path: 'register/user', component: StudentRegisterComponent},
   { path: 'login', component: LoginComponent },
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
   { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
   // { path:'user/:id', component: UserProfileComponent, canActivate:[AuthGuard]},
   { path:'user/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
+  { path: '**', component: PagenotfoundComponent},
 ];
 
 @NgModule({
