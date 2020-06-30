@@ -29,5 +29,3 @@ export class EndpointsService {
     return this.http.put(this.apiHost+'user/profile/',body)
   }
 }
-
-

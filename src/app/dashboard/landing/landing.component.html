@@ -5,10 +5,10 @@
       href="https://fonts.googleapis.com/css?family=Yanone Kaffeesatz">
 
 
-<div class="landing">
+<div class="landing" *ngIf="!currentUser">
 <div class="container mt-5 mb-3">
     <div>
-        <div class="font fixed"> <span style="font-size: 3rem;">CodeMo</span><span class="material-icons">school</span><a href="" class="float-right btn btn-outline-success" style="font-size: 1.5rem;">Login</a></div>
+        <div class="font fixed"> <span style="font-size: 3rem;">CodeMo</span><span class="material-icons">school</span><a href="" class="float-right btn btn-outline-success btn-sm" style="font-size: 1.5rem;" routerLink="/login">Login</a></div>
     </div>
     <div class="text-center"><span class="material-icons" style="font-size: 5rem;">school</span></div>
     <div class="row mt-3">
@@ -24,7 +24,7 @@
             <div class=" d-block text-center p-2 size">
                     <h4 class='headers font'>Register as Mentor</h4>
                     <div class="body">As a mentor you can set tests for other students to tackle and view the performance of a student who took the test</div>
-                    <a href="" class="btn btn-outline-success font">Register</a>
+                    <a routerLink="register/" class="btn btn-sm btn-outline-success font">Register</a>
             </div>
         </div>
         <br>
@@ -32,7 +32,7 @@
             <div class=" d-block text-center p-2 size">
                 <h4 class="headers font">Register as Student</h4>
                 <div class="body ">Students have the ability to take tests by different mentors and also be able to view their scores</div>
-                <a href="" class="btn btn-outline-success font">Register</a>
+                <a routerLink="user/register/" class="btn btn-sm btn-outline-success font">Register</a>
             </div>
         </div>
     </div> 

@@ -49,9 +49,9 @@ export class UpdateProfileComponent implements OnInit {
       this.mentor=this.profile['user'].is_mentor
       console.log(this.mentor)
 
-    this.authService.getUser().subscribe(res=>{
-      this.user=res
-    })
+    // this.authService.getUser().subscribe(res=>{
+    //   this.user=res
+    // })
 
     this.updateForm.patchValue({
       bio:this.profile['bio'],
