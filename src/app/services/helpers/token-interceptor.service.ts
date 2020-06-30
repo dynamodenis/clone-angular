@@ -8,7 +8,6 @@ import { AuthService } from '../auth.service';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       const token = localStorage.getItem('Bearer');
   
