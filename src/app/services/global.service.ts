@@ -24,11 +24,11 @@ export class GlobalService {
     let token=this.authService.getToken();
     // console.log(token)
     if (token !==''){
-      this.httpHeaders['Authorization']= 'Token'+' '+ token;
+      this.httpHeaders['Authorization']= 'Bearer'+' '+ token;
     }
     // console.log(this.httpHeaders)
-    // return new HttpHeaders(this.httpHeaders)
-    return this.httpHeaders
+    return new HttpHeaders(this.httpHeaders)
+    // return this.httpHeaders
   }
 
 

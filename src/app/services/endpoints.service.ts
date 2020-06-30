@@ -13,7 +13,7 @@ export class EndpointsService {
   profileUrl="http://127.0.0.1:8000";
 
 
-  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient, private globalService:GlobalService) { }
+  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
 
 
   // getProfile(id:number){
@@ -25,8 +25,8 @@ export class EndpointsService {
     return this.http.get(this.apiHost+'user/profile/')
   }
 
-  updateProfile(id:number,body){
-    return this.http.put(this.apiHost+'user/'+id+'/profile/',body,{headers: this.globalService.headers()})
+  updateProfile(body){
+    return this.http.put(this.apiHost+'user/profile/',body)
   }
 }
 

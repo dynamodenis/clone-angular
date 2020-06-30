@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'challenge', component: QuestionComponent, canActivate:[AuthGuard]},
   { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
   // { path:'user/:id', component: UserProfileComponent, canActivate:[AuthGuard]},
-  { path:'user/update/:id', component: UpdateProfileComponent, canActivate:[AuthGuard]},
+  { path:'user/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({

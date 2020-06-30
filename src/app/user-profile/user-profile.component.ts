@@ -17,8 +17,8 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private router:Router,private authService:AuthService) { }
 
-  onClick(id){
-    this.router.navigate(['user/update',id])
+  onClick(){
+    this.router.navigate(['user/update'])
   }
 
 
@@ -30,7 +30,6 @@ export class UserProfileComponent implements OnInit {
     this.endpointsService.getProfile().subscribe(res=>{
       this.profile=res;
       this.picture=this.endpointsService.profileUrl+this.profile.picture
-      console.log(this.authService.getToken())
       
     })
   }

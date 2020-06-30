@@ -30,7 +30,7 @@
         <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="color:white; font-weight:bold" >Profile</a>
+        <a class="nav-link" routerLink='/user' style="color:white; font-weight:bold" >Profile</a>
       </li> 
     </ul>
   </div>
