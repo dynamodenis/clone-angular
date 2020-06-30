@@ -27,7 +27,7 @@
         <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.loggedIn()">Sign In</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/user/{id}/profile" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()">Profile</a>
+        <a class="nav-link" routerLink="/user" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()">Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
