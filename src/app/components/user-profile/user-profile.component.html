@@ -17,7 +17,7 @@
                     <div class="col-lg-2 col-md-2"></div>
                     <div class="col-lg-8 col-md-8 text-center">
                         <h2 class="card-title">{{profile.user.username}}</h2> <hr>
-                        <div class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>{{profile.user.email}} <span></span> <div *ngIf='profile.location'> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>Nairobi,Kenya </div></div>
+                        <div class="card-text"><span class="label mr-2" id="about-info" style="font-weight: bolder;"><i class="fas fa-envelope-square"></i></span>{{profile.user.email}} <span></span> <div *ngIf='profile.location'> <span class="label ml-2 mr-2" id="about-info"><i class="fas fa-map-marker-alt"></i></span>{{profile.location}} </div></div>
                         <div>
                             <div *ngIf='profile.bio'>
                                 <p class="card-text"><span id="about-info" style="font-weight: bolder;">About Me:</span> <span>{{profile.bio}}</span> </p>
