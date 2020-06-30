@@ -1,3 +1,5 @@
+import { QuoteFormComponent } from './TM/quote-form/quote-form.component';
+import { QuoteComponent } from './TM/quote/quote.component';
 import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.component';
 import { QuizzesComponent } from './students/quizzes/quizzes.component';
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
@@ -6,6 +8,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'quote', component: QuoteComponent },
+
   {
     path: 'quizzes',
     component: QuizzesComponent,
@@ -28,7 +32,9 @@ const routes: Routes = [
         component: QuizScoresComponent
       }
     ]
-  }
+  },
+
+
 ];
 
 @NgModule({

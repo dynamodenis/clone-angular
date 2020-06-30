@@ -14,8 +14,9 @@ export class GlobalService {
 
   apiHost = 'http://127.0.0.1:8000/api/';
   httpHeaders = {'Content-Type': 'application/json',
-    // tslint:disable-next-line: object-literal-key-quotes
-  // 'Authorization': 'Token 7c00f8d475daf0fd7be808be173e09677b7640f463e3bc6865c22707cf04d531'
+// tslint:disable-next-line: max-line-length
+// tslint:disable-next-line: object-literal-key-quotes
+'Authorization': 'Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZW1haWwiOiJuaW1vaEBnbWFpbC5jb20ifQ.EtKzl3YhmP_zLkHHH4bzFQaxXlV4JMSsnCuNWJwNCMs'
 };
 
   headers() {
