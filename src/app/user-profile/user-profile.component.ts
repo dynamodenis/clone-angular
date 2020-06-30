@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {  ActivatedRoute, ParamMap,Params } from '@angular/router';
+import {  ActivatedRoute, ParamMap,Params, Router } from '@angular/router';
 import { GlobalService } from '../services/global.service';
 import { EndpointsService } from '../services/endpoints.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,28 +11,26 @@ import { EndpointsService } from '../services/endpoints.service';
 })
 export class UserProfileComponent implements OnInit {
   profile;
+  picture;
   id:number
+  token
 
-  constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private globalService:GlobalService) { }
+  constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private router:Router,private authService:AuthService) { }
+
+  onClick(){
+    this.router.navigate(['user/update'])
+  }
+
 
   ngOnInit(){
     
-    // this.id = +this.route.paramMap.subscribe((params:Params)=>{
-    //   this.id=+params.get('id')
-    //   this.profileService.getProfile(this.id).subscribe((res)=>{
-    //   this.profile=res;
-    //   console.log(this.id)
-    // })
-    // })
 
     let id = +this.route.snapshot.paramMap.get('id');
 
-    this.endpointsService.getProfile(id).subscribe(res=>{
-      // localStorage.setItem('Token', res.user.token)
-      console.log(res)
+    this.endpointsService.getProfile().subscribe(res=>{
       this.profile=res;
-
+      this.picture=this.endpointsService.profileUrl+this.profile.picture
+      
     })
   }
 }
-

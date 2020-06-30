@@ -1,0 +1,42 @@
+<div class="conatiner body mt-5">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <legend>Update Profile</legend>
+            <form [formGroup]='updateForm' (ngSubmit)='updateProfile()' >
+                <div >
+                    <label >Bio:</label>
+                    <input type="text" placeholder="Bio..." formControlName='bio' class="form-control">
+                </div>
+                <div>
+                    <label >Location:</label>
+                    <input type="text" placeholder="Location..." formControlName='location' class="form-control">
+                </div>
+                <div>
+                    <label >Education:</label>
+                    <input type="text" placeholder="Education..." formControlName='education' class="form-control">
+                </div>
+                <div *ngIf="mentor">
+                    <div>
+                        <label >Company:</label>
+                        <input type="text" placeholder="Company..." formControlName='company' class="form-control">
+                    </div>
+                </div>
+
+                <div>
+                    <label>Change Profile Picture:</label>
+                    <input class="file-input" type="file">
+                </div>
+                  
+
+
+                <div class="updateButtons mt-2">
+                    <input [disabled]="!updateForm.valid" type="submit" class="btn btn-outline-success btn-sm mr-2 update" value="Update">
+                    <a class="btn btn-outline-info btn-sm backProfile" (click)='toProfile()'>Back To Profile</a>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
