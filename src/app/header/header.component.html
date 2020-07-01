@@ -1,26 +1,18 @@
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- *ngIf="currentUser" -->
-<header  >
-  <div class="logo">CodeMo<span class="material-icons">school</span></div>
-  <nav>
-    <ul>
-      <li><a href="#">Practice</a></li>
-      <li><a href="#">Start Test</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li class="sub-menu"><a href="#">Account Info</a>
-        <ul>
-          <li>
-            <a href="#" *ngIf="authService.loggedIn()">Profile</a>
-          </li>
-          <li>
-            <a href="#" *ngIf="authService.loggedIn()">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <div class="menu-toggle">
-    <i class="fa fa-bars" aria-hidden="true"></i>
-  </div>
-</header>
-
+<div class="header" *ngIf="currentUser">
+  <h2 class="logo">CodeMo<span class="material-icons">school</span></h2>
+  <input type="checkbox" id="chk">
+  <label for="chk" class="show-menu-btn">
+    <i class="fas fa-ellipsis-h"></i>
+  </label>
+  <ul class="menu">
+    <li class="nav_links"> <a href="#">Challenges</a></li>
+    <li class="nav_links"> <a href="#">Practice</a></li>
+    <!-- <li class="nav_links"> <a routerLink="/register" *ngIf="!authService.loggedIn()">Sign Up</a></li>
+    <li class="nav_links"> <a routerLink="/login" *ngIf="!authService.loggedIn()">Sign In>Sign In</a></li> -->
+    <li class="nav_links"> <a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
+    <li class="nav_links"> <a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+    <label for="chk" class="hide-menu-btn">
+      <i class="fas fa-times"></i>
+    </label>
+  </ul>
+</div>

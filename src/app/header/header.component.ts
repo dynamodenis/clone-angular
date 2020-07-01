@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
 
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -32,19 +31,5 @@ export class HeaderComponent implements OnInit {
         console.log(this.user.user.is_mentor)
     });
 
-
-    $(document).ready(
-      function() {
-        $('.menu-toggle').click(function() {
-          $('nav').toggleClass('active')
-        })
-        $('ul li').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).toggleClass('active');
-        })
-      }
-    )
-
   }
-
 }
