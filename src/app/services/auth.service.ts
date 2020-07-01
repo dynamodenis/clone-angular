@@ -27,9 +27,9 @@ export class AuthService {
     return this.http.post<any>(this._authUrl + 'student/register/', user)
   }
 
-  // public get currentUserValue(){
-  //   return this.currentUserSubject.value;
-  // }
+  public get currentUserValue(){
+    return this.currentUserSubject.value;
+  }
 
   login(body){
     return this.http.post<any>(this._authUrl +'login/', body).pipe(map(userInfo => {

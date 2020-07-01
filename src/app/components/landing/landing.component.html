@@ -5,7 +5,7 @@
       href="https://fonts.googleapis.com/css?family=Yanone Kaffeesatz">
 
 
-<div class="landing">
+<div class="landing" *ngIf="!currentUser">
 <div class="container mt-5 mb-3">
     <div>
         <div class="font fixed"> <span style="font-size: 3rem;">CodeMo</span><span class="material-icons">school</span><a href="" class="float-right btn btn-outline-success btn-sm" style="font-size: 1.5rem;" routerLink="/login">Login</a></div>

@@ -51,9 +51,12 @@ export class MentorRegisterComponent implements OnInit {
     this.authService.registerMentor(body).subscribe(
       res => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         localStorage.setItem('Bearer', res.user.token)
 >>>>>>> fb74889... fix interceptor bug
+=======
+>>>>>>> 7a539cd... fix bearer token error
         this.router.navigate(['/login']);
       }
     )

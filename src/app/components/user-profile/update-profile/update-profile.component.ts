@@ -31,7 +31,7 @@ export class UpdateProfileComponent implements OnInit {
   }
   // ONSUBMIT FORM
   updateProfile(){
-    this.endpointsService.updateProfile(this.profile.user.id, this.updateForm.value).subscribe(res=>{
+    this.endpointsService.updateProfile(this.updateForm.value).subscribe(res=>{
       this.router.navigate(['/user/' + this.profile.user.id]);
     })
   }
@@ -39,7 +39,6 @@ export class UpdateProfileComponent implements OnInit {
 
   // ON PAGE LOAD
   ngOnInit(): void {
-    let id = +this.route.snapshot.paramMap.get('id');
 
     this.endpointsService.getProfile().subscribe(res=>{
       // localStorage.setItem('Token', res.user.token)
