@@ -1,20 +1,26 @@
-<div id="container" *ngIf="currentUser">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- *ngIf="currentUser" -->
+<header  >
+  <div class="logo">CodeMo<span class="material-icons">school</span></div>
   <nav>
-    <div id="logo">
-      CodeMo<span class="material-icons">school</span>
-    </div>
     <ul>
       <li><a href="#">Practice</a></li>
-      <li><a href="#">Create Test</a></li>
-      <li class="dropdown"><a href="#">Account&nbsp;<i class="fa fa-caret-down"></i> </a>
-       <div class="dd">
-         <div id="u_a_c"><div id="up_arrow"></div></div>
-        <ul>         
-          <li><a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
-          <li><a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+      <li><a href="#">Start Test</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li class="sub-menu"><a href="#">Account Info</a>
+        <ul>
+          <li>
+            <a href="#" *ngIf="authService.loggedIn()">Profile</a>
+          </li>
+          <li>
+            <a href="#" *ngIf="authService.loggedIn()">Logout</a>
+          </li>
         </ul>
-        </div>
+      </li>
     </ul>
   </nav>
-</div>
+  <div class="menu-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</header>
 
