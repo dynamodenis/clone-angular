@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MentorRegisterComponent} from './components/auth/mentor-register/mentor-register.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LandingComponent } from './dashboard/landing/landing.component';
 import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -16,6 +15,8 @@ import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.
 import { QuizzesComponent } from './students/quizzes/quizzes.component';
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
 import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.component';
+import { QuestionComponent } from './components/question/question.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
