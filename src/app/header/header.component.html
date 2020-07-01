@@ -1,18 +1,22 @@
-<div class="header" *ngIf="currentUser">
-  <h2 class="logo">CodeMo<span class="material-icons">school</span></h2>
-  <input type="checkbox" id="chk">
-  <label for="chk" class="show-menu-btn">
-    <i class="fas fa-ellipsis-h"></i>
+<nav *ngIf="currentUser">
+  <div class="logo">CodeMo<span class="material-icons">school</span></div>
+  <label for="btn" class="icon">
+    <span><i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+    </span>
   </label>
-  <ul class="menu">
-    <li class="nav_links"> <a href="#">Challenges</a></li>
-    <li class="nav_links"> <a href="#">Practice</a></li>
-    <!-- <li class="nav_links"> <a routerLink="/register" *ngIf="!authService.loggedIn()">Sign Up</a></li>
-    <li class="nav_links"> <a routerLink="/login" *ngIf="!authService.loggedIn()">Sign In>Sign In</a></li> -->
-    <li class="nav_links"> <a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
-    <li class="nav_links"> <a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
-    <label for="chk" class="hide-menu-btn">
-      <i class="fas fa-times"></i>
-    </label>
+  <input type="checkbox" id="btn">
+  <ul>
+    <li><a href="#">Practice</a></li><li>
+    <li><a href="#">Challenges</a></li>
+    <li><a href="#">Start Test</a></li>
+    <li>
+      <label for="btn-2" class="show">My Account</label>
+      <a href="#">My Account</a>
+      <input type="checkbox" id="btn-2">
+      <ul>
+        <li><a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
+        <li><a href="#" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+      </ul>
+    </li>
   </ul>
-</div>
+</nav>
