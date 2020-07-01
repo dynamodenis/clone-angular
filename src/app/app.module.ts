@@ -1,11 +1,6 @@
 import { EndpointsService } from './services/endpoints.service';
 import { AuthService } from './services/auth.service';
-<<<<<<< HEAD
 import { TokenInterceptorService} from './services/helpers/token-interceptor.service';
-
-=======
-import { TokenInterceptorService} from './services/token-interceptor.service';
->>>>>>> e466dc7... separate register components
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,7 +18,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-<<<<<<< HEAD
 import { AuthGuard } from './services/helpers/auth.guard';
 
 
@@ -43,9 +37,6 @@ import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.
 import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/answer.component';
 
 
-=======
->>>>>>> e466dc7... separate register components
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +47,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     LoginComponent,
     StudentRegisterComponent,
     MentorRegisterComponent,
-<<<<<<< HEAD
     LandingComponent,
     SetquizComponent,
     UpdateProfileComponent,
@@ -69,8 +59,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     QuizListComponent,
     QuizScoresComponent,
     AnswerComponent,
-=======
->>>>>>> e466dc7... separate register components
   ],
   imports: [
     BrowserModule,
@@ -83,7 +71,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     EndpointsService,
     CookieService,
     AuthService,
-<<<<<<< HEAD
     AuthGuard,
     GlobalService,
     CookieService,
@@ -92,11 +79,9 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    }
-=======
-    EndpointsService,
-    TokenInterceptorService,
->>>>>>> e466dc7... separate register components
+    },
+    AuthGuard,
+
   ],
 
   bootstrap: [AppComponent]
