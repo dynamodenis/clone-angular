@@ -18,6 +18,7 @@ export class EndpointsService {
 
   constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
 
+  constructor(private tokenInterceptorService: TokenInterceptorService, private http: HttpClient) { }
 
   // getProfile(id:number){
   //   // console.log(this.globalService.headers())
