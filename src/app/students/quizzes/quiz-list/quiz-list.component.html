@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Get your skills certified</h2>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let quiz of quizzes"><br>
+          <div class="panel panel-default"><br>
+            <div class="ml-4">
+              <h6 class="text-muted">Challenge</h6>
+              <h2 class="main">{{quiz.name}}</h2>
+              <h5>{{quiz.description}}</h5>
+              <div class="d-flex card-menu">
+                <a [routerLink]="['/quizzes', quiz.slug]">
+                  <button class="btn btn-outline-success btn-md">Start Test</button>
+                  </a>
+              </div>
+            </div><br>
+          </div>
+        </div>
+      </div>
+       <router-outlet></router-outlet>
+    </div>
+    

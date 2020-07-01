@@ -14,6 +14,7 @@ export class UserProfileComponent implements OnInit {
   picture;
   id:number
   token
+  questions
 
   constructor(private endpointsService:EndpointsService,private route: ActivatedRoute, private router:Router,private authService:AuthService) { }
 
@@ -25,11 +26,17 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(){
     
 
-    let id = +this.route.snapshot.paramMap.get('id');
+    // let id = +this.route.snapshot.paramMap.get('id');
 
     this.endpointsService.getProfile().subscribe(res=>{
       this.profile=res;
       this.picture=this.endpointsService.profileUrl+this.profile.picture
+
+
+    this.endpointsService.getMyQuizzes().subscribe(res=>{
+      this.questions=res;
+      console.log(this.questions)
+    })
       
     })
   }

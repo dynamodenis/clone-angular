@@ -38,5 +38,19 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <legend>Tests Taken</legend>
+            <div *ngIf='questions !=null'>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div *ngFor='let question of questions' class="card">
+                            <h5 class="card-title">Test : {{question.name}}</h5>
+                            <p class="">{{question.description}}</p>
+                            <p>Status:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

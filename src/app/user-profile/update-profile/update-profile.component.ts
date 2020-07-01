@@ -12,18 +12,28 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UpdateProfileComponent implements OnInit {
 
+   // PROPERTIES USED
+   profile
+   mentor:Boolean;
+   user;
+   picture:File
+
+  imageSelected(event){
+    this.picture=event.target.files[0]
+    this.updateForm.get('picture').setValue(this.picture)
+    console.log(this.picture)
+  }
+
+
   updateForm= new FormGroup({
     bio:new FormControl(''),
     location:new FormControl(''),
     education:new FormControl(''),
     company:new FormControl(''),
-    // picture: new FormControl('')
+    picture:new FormControl(''),
   })
 
-  // PROPERTIES USED
-  profile;
-  mentor:Boolean;
-  user;
+ 
 
   constructor(private endpointsService:EndpointsService,private route: ActivatedRoute,private router:Router,private authService:AuthService) { }
 
@@ -33,7 +43,9 @@ export class UpdateProfileComponent implements OnInit {
   }
   // ONSUBMIT FORM
   updateProfile(){
-    this.endpointsService.updateProfile(this.updateForm.value).subscribe(res=>{
+    const update=new FormData();
+    update.append('picture',this.updateForm.get('picture').value)
+    this.endpointsService.updateProfile(update).subscribe(res=>{
       this.router.navigate(['/user']);
     })
   }
@@ -41,7 +53,7 @@ export class UpdateProfileComponent implements OnInit {
 
   // ON PAGE LOAD
   ngOnInit(): void {
-    let id = +this.route.snapshot.paramMap.get('id');
+    // let id = +this.route.snapshot.paramMap.get('id');
 
     this.endpointsService.getProfile().subscribe(res=>{
       // localStorage.setItem('Token', res.user.token)

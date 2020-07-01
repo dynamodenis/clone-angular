@@ -53,4 +53,13 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('Bearer')
   }
+
+
+  getUser(){
+    return this.http.get<any>(this._authUrl + 'user/' )
+  }
+
+  updateUser(user){
+    return this.http.put<any>(this._authUrl + 'user/' ,user)
+  }
 }

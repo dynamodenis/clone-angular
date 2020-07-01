@@ -1,0 +1,11 @@
+body{
+    background-color: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .main{
+    text-transform: capitalize;
+  }
+  .panel{
+    border: solid #637C33;
+  }
+  

@@ -1,0 +1,22 @@
+ 
+<div>
+    <h6 class='ml-5 text-muted'>Test taken on {{quiz.timestamp| date}} </h6>
+        <div class="question-wrapper">
+            <div *ngIf="quiz!=null" >
+                <div class="question-number">
+                    QUESTION  {{currentIndex + 1}} OF {{quiz.question_set.length}}
+                </div>
+                <app-question [selectedAnswer]="answers[currentIndex]" [question]="quiz['question_set'][currentIndex]" (selectAnswer)="selectAnswer($event)"></app-question>
+            </div>
+        </div>
+    
+        <div class="buttons" *ngIf="quiz!=null">
+            <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="previous()">Previous
+            </button></a>
+             <a routerLink="/quizzes/all"><button class="btn btn-success " (click)="next()" [innerHtml]="currentIndex == quiz.question_set.length - 1 ? 'Submit' : 'Next'" > </button>
+             </a>
+    
+            <br>
+        </div>
+    </div>
+    

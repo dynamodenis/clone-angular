@@ -28,4 +28,28 @@ export class EndpointsService {
   updateProfile(body){
     return this.http.put(this.apiHost+'user/profile/',body)
   }
+
+  getMyQuizzes(){
+    return this.http.get(this.apiHost+'my-quizzes/')
+  }
+
+  // Studeents questions
+  quizzes() {
+    return this.apiHost + 'quizzes/';
+  }
+
+  quiz(slug: string) {
+    return this.apiHost + 'quizzes/' + slug + '/';
+  }
+
+  saveAnswer() {
+    return this.apiHost + 'save-answer/';
+  }
+
+  submitQuiz(slug: string) {
+    return this.apiHost + 'quizzes/' + slug + '/submit/';
+  }
+  addQuiz(slug: string) {
+    return this.apiHost + 'quizzes/';
+  }
 }
