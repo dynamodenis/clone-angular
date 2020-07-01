@@ -1,6 +1,7 @@
 import { EndpointsService } from './services/endpoints.service';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptorService} from './services/helpers/token-interceptor.service';
+
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,22 +16,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { QuestionComponent } from './students/quizzes/quiz-detail/question/question.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LandingComponent} from './components/landing/landing.component';
-import { HeaderComponent } from './components/header/header.component';
-import { QuiztestComponent } from './components/quiztest/quiztest.component';
-import { QuestionComponent } from './components/question/question.component';
-import { AnswerComponent } from './components/question/answer/answer.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
 import { AuthGuard } from './services/helpers/auth.guard';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
-
-
+import { LandingComponent } from './dashboard/landing/landing.component';
 import { GlobalService } from './services/global.service';
 import { ProfileService } from './services/profile.service';
 import { SetquizComponent } from './mentor/setquiz/setquiz.component';
@@ -44,6 +36,7 @@ import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
 import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.component';
 import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/answer.component';
+
 
 
 @NgModule({
@@ -80,7 +73,9 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     EndpointsService,
     CookieService,
     AuthService,
+    EndpointsService,
     AuthGuard,
+    EndpointsService,
     GlobalService,
     CookieService,
     ProfileService,
@@ -88,9 +83,7 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    },
-    AuthGuard,
-
+    }
   ],
 
   bootstrap: [AppComponent]
