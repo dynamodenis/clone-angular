@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeaderComponent implements OnInit {
   currentUser: any;
-  user
+  user;
 
   constructor( public authService: AuthService, private router: Router, public endpoints: EndpointsService, private http:HttpClient) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);

@@ -26,7 +26,7 @@
 }
 #container > nav > ul {
   margin:0;
-  paddding:0;
+  padding:0;
   list-style-type:none;
   display:flex;
   position:absolute;
