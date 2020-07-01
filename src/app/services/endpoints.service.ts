@@ -53,3 +53,4 @@ export class EndpointsService {
     return this.apiHost + 'quizzes/';
   }
 }
+

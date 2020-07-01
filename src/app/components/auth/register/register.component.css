@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 400px;
+    background: white; 
+    padding: 50px 40px;
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.input-field, .submit-button{
+    margin: 25px;
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.input-field input{
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    outline: none;
+    font-size: 19px;
+    transition: .4s;
+}
+
+input:focus{
+    border: 1px solid #1DA1F2;
+
+}
+
+.input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: grey;
+    font-size: 18px;
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+    transform: translateY(-38px);
+    background: white;
+    font-size: 16px;
+    color: #637c33;
+}
+
+.submit-button-sec{
+    margin-top:30px;
+}
+
+.submit-button{
+    width: 100%;
+    padding: 8px;
+    background-color:#637c33;
+}
+
