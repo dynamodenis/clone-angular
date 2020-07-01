@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GlobalService } from './global.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +42,7 @@ export class AuthService {
 
 
   loggedIn(){
-    return !!localStorage.getItem('Token')
+    return !!localStorage.getItem('Bearer')
   }
 
   logoutUser(){
@@ -56,6 +53,7 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('Bearer')
   }
+<<<<<<< HEAD
 
 
   getUser(){
@@ -66,3 +64,6 @@ export class AuthService {
     return this.http.put<any>(this._authUrl + 'user/' ,user)
   }
 }
+=======
+}
+>>>>>>> 0bd5c48... all merge conflicts fixed

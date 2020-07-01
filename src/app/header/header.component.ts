@@ -28,10 +28,14 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.authService.getUser().subscribe(res=>{
       this.user=res;
       console.log(this.user.user.is_mentor)
   });
 }
+=======
+  }
+>>>>>>> 0bd5c48... all merge conflicts fixed
 
 }

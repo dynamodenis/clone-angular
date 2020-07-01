@@ -28,6 +28,7 @@ export class EndpointsService {
   updateProfile(body){
     return this.http.put(this.apiHost+'user/profile/',body)
   }
+<<<<<<< HEAD
 
   getMyQuizzes(){
     return this.http.get(this.apiHost+'my-quizzes/')
@@ -53,3 +54,6 @@ export class EndpointsService {
     return this.apiHost + 'quizzes/';
   }
 }
+=======
+}
+>>>>>>> 0bd5c48... all merge conflicts fixed
