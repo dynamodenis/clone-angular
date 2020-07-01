@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+<<<<<<< HEAD
 import { AuthGuard } from './services/helpers/auth.guard';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,6 +26,16 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   { path: 'register/mentor', component: MentorRegisterComponent},
   { path: 'register/user', component: StudentRegisterComponent},
+=======
+import { MentorRegisterComponent} from './components/auth/mentor-register/mentor-register.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
+
+
+const routes: Routes = [
+  { path: 'register', component: MentorRegisterComponent},
+  { path: 'user/register', component: StudentRegisterComponent },
+>>>>>>> e466dc7... separate register components
   { path: 'login', component: LoginComponent },
   { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
   { path:'user/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
