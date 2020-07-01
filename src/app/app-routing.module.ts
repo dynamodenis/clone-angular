@@ -16,8 +16,8 @@ import { QuizzesComponent } from './students/quizzes/quizzes.component';
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
 import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.component';
 import { QuestionComponent } from './components/question/question.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 
 const routes: Routes = [
