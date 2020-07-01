@@ -9,4 +9,67 @@ footer {
   text-align: center;
 }
 
+.card {
+  width: 30%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  margin-right: 20px;
+  padding: 0;
+}
 
+
+.card-body{
+  padding: 10px 20px 20px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-title{
+  padding: 10px 20px 0px 20px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.challenges{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.card-body .btn {
+  display: block;
+  color:black;
+  text-align: center;
+  /* background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #637c33 74%); */
+  margin-top: 30px;
+  text-decoration: none;
+  padding: 10px 5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .card {
+    width: 80%;
+  }
+}

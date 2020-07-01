@@ -48,13 +48,6 @@ export class StudentRegisterComponent implements OnInit {
 
     this.authService.registerStudent(body).subscribe(
       res => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        localStorage.setItem('Bearer', res.user.token)
->>>>>>> fb74889... fix interceptor bug
-=======
->>>>>>> 7a539cd... fix bearer token error
         this.router.navigate(['/login']);
       }
     )

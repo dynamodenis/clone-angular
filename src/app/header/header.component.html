@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-md  navbar-default fixed-top" *ngIf="currentUser">
 <<<<<<< HEAD
 <<<<<<< HEAD:src/app/components/header/header.component.html
@@ -94,3 +95,25 @@
 =======
   </nav>
 >>>>>>> 0bd5c48... all merge conflicts fixed
+=======
+<div class="header" *ngIf="currentUser">
+  <h2 class="logo">CodeMo<span class="material-icons">school</span></h2>
+  <input type="checkbox" id="chk">
+  <label for="chk" class="show-menu-btn">
+    <i class="fas fa-ellipsis-h"></i>
+  </label>
+  <ul class="menu">
+    <li class="nav_links"> <a href="#">Challenges</a></li>
+    <li class="nav_links"> <a href="#">Practice</a></li>
+    <!-- <li class="nav_links"> <a routerLink="/register" *ngIf="!authService.loggedIn()">Sign Up</a></li>
+    <li class="nav_links"> <a routerLink="/login" *ngIf="!authService.loggedIn()">Sign In>Sign In</a></li> -->
+    <li class="nav_links"> <a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
+    <li class="nav_links"> <a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+    <label for="chk" class="hide-menu-btn">
+      <i class="fas fa-times"></i>
+    </label>
+  </ul>
+</div>
+
+
+>>>>>>> dca6016... fix dashboard display
