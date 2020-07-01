@@ -16,6 +16,7 @@ export class QuizListComponent implements OnInit {
   ngOnInit(): void {
     this.quizzesService.getQuizzes().subscribe((data) => {
       this.quizzes = data;
+      console.log(this.quizzes)
     });
 
 }

@@ -9,4 +9,9 @@
 
  legend{
     text-align: center;
+    text-decoration: underline;
+}
+
+.tests{
+    background-color: transparent;
 }

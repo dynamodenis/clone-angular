@@ -29,7 +29,7 @@ const routes: Routes = [
   { path:'user', component: UserProfileComponent, canActivate:[AuthGuard]},
   { path:'user/update', component: UpdateProfileComponent, canActivate:[AuthGuard]},
   // Qusetions and answers
-  { path: 'quote', component: QuoteComponent },
+  { path: 'test', component: QuoteComponent },
 
   {
     path: 'quizzes',

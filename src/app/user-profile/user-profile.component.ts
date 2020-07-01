@@ -35,7 +35,7 @@ export class UserProfileComponent implements OnInit {
 
     this.endpointsService.getMyQuizzes().subscribe(res=>{
       this.questions=res;
-      console.log(this.questions)
+      console.log(this.questions[0].questions_count)
     })
       
     })

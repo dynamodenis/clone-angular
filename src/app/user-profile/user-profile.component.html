@@ -39,14 +39,19 @@
             </div>
         </div>
         <div class="container">
-            <legend>Tests Taken</legend>
+            <legend class="legend" *ngIf='profile.user.is_mentor'>Tests Set</legend>
+            <legend class="legend" *ngIf='profile.user.is_student'>Tests Taken</legend>
             <div *ngIf='questions !=null'>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div *ngFor='let question of questions' class="card">
-                            <h5 class="card-title">Test : {{question.name}}</h5>
-                            <p class="">{{question.description}}</p>
-                            <p>Status:</p>
+                    <div class="col-md-6 mb-4">
+                        <div *ngFor='let question of questions' class="card tests ">
+                            <h5 class="card-title m-2">Test : {{question.name}}</h5>
+                            <div class="form-inline">
+                            <p class="ml-2">{{question.description}}</p>
+                            <p class="ml-2">Total Questions: <span class="badge badge-info">{{question.questions_count}}</span></p> 
+                            <p *ngIf='question.completed == false' class="ml-2">Status: <span class="badge badge-warning">Not Completed</span></p>
+                            <p *ngIf='question.completed == true' class="ml-2">Status: <span class="badge badge-success">Completed</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>

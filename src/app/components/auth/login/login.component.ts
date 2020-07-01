@@ -19,13 +19,13 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     ) { 
       if (this.authService.currentUserValue) { 
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['quizzes/all']);
       }
     }
 
   ngOnInit(){
     this.createForm();
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'quizzes/all';
   }
 
   get f() { return this.loginForm.controls; }
