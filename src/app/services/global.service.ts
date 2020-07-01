@@ -25,7 +25,7 @@ export class GlobalService {
     let token=this.authService.getToken();
     // console.log(token)
     if (token !==''){
-      this.httpHeaders['Authorization']= 'Bearer'+' '+ token;
+      this.httpHeaders['Authorization']= 'Bearer '+ token;
     }
     // console.log(this.httpHeaders)
     return new HttpHeaders(this.httpHeaders)
@@ -38,5 +38,8 @@ export class GlobalService {
     return token ===''? false:true;
   }
 
+  logout(){
+    return this.cookieService.delete('ATN')
+  }
 
 }

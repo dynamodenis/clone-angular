@@ -36,11 +36,24 @@ import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
 import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.component';
 import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/answer.component';
-
+import { StatisticsComponent } from './TM/statistics/statistics.component';
+import { TrialAnswerComponent } from './students/trialtest/quizzes/quiz-detail/question/answer/answer.component';
+import { TrialQuestionComponent } from './students/trialtest/quizzes/quiz-detail/question/question.component';
+import { TrialDetailComponent } from './students/trialtest/quizzes/quiz-detail/quiz-detail.component';
+import { TrialListComponent } from './students/trialtest/quizzes/quiz-list/quiz-list.component';
+import { TrialComponent } from './students/trialtest/quizzes/quizzes.component';
+import { QuizResultComponent } from './students/trialtest/quizzes/quiz-result/quiz-result.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
   declarations: [
+    TrialAnswerComponent,
+    TrialQuestionComponent,
+    TrialComponent,
+    TrialDetailComponent,
+    TrialListComponent,
+    QuizResultComponent,
     AppComponent,
     DashboardComponent,
     HeaderComponent,
@@ -61,6 +74,8 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     QuizListComponent,
     QuizScoresComponent,
     AnswerComponent,
+    StatisticsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -68,6 +83,7 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    ChartsModule,
   ],
   providers: [
     EndpointsService,
@@ -75,7 +91,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
     AuthService,
     EndpointsService,
     AuthGuard,
-    EndpointsService,
     GlobalService,
     CookieService,
     ProfileService,

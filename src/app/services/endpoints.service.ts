@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TokenInterceptorService} from './helpers/token-interceptor.service';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http'
+import { HttpHeaders } from '@angular/common/http';
 import { GlobalService } from './global.service';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class EndpointsService {
   profileUrl="http://127.0.0.1:8000";
 
 
-  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
+  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient,private globalService: GlobalService) { }
 
 
   // getProfile(id:number){
@@ -52,4 +52,28 @@ export class EndpointsService {
   addQuiz(slug: string) {
     return this.apiHost + 'quizzes/';
   }
+
+  tquizzes() {
+    return this.globalService.apiHost + 'trial/quizzes/';
+  }
+
+  tquiz(slug: string) {
+    return this.globalService.apiHost + 'trial/quizzes/' + slug + "/";
+  }
+
+  tsaveAnswer() {
+    return this.globalService.apiHost + 'trial/saveanswer/';
+  }
+
+  tsubmitQuiz(slug: string) {
+    return this.globalService.apiHost + 'trial/quizzes/' + slug + "/submit/";
+  }
+  setTest(){
+    
+      return this.globalService.apiHost + 'trial/settest/' ;
+  }
+  stats(){
+    
+    return this.globalService.apiHost + 'trial/statistics/' ;
+}
 }
