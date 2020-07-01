@@ -25,6 +25,7 @@ a {
   align-items: center;
   justify-content: center;
   font-family: "Muli-Regular";
+  background-color:#B9C999;
 }
 
 .inner {
@@ -32,10 +33,11 @@ a {
   width: 435px; 
 }
 
+
 .image{
   position: absolute;
   bottom: -12px;
-  left: -323px;
+  left: -378px;
   z-index: 99; 
 }
 

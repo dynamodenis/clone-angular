@@ -87,5 +87,6 @@ import { AnswerComponent } from './students/quizzes/quiz-detail/question/answer/
   ],
 
   bootstrap: [AppComponent]
+ 
 })
 export class AppModule { }

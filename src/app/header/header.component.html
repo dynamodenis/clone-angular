@@ -1,119 +1,20 @@
-<<<<<<< HEAD
-<nav class="navbar navbar-expand-md  navbar-default fixed-top" *ngIf="currentUser">
-<<<<<<< HEAD
-<<<<<<< HEAD:src/app/components/header/header.component.html
-=======
->>>>>>> 0bd5c48... all merge conflicts fixed
-  <div style='margin-right:300px;'></div>
-    <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-  
-        <li class="nav-item" style='margin-right:200px;'>
-          <a class="nav-link" routerLink="" style='color:white;'><b>PRACTICE</b></a>
-        </li>
-<<<<<<< HEAD
-        <li class="nav-item" *ngIf='user.user.is_mentor'>
-          <a class="nav-link" routerLink="" style='color:white;' >Create Test</a>
-        </li>
-=======
->>>>>>> 0bd5c48... all merge conflicts fixed
-        <li class="nav-item" >
-          <a class="nav-link" routerLink=""><i class='fa fa-search' style='color:white; font-weight:bold;'><u> Search</u></i></a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLink=""><i class='fa fa-envelope' style='color:white; font-weight:bold;'></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/"><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/register" style="color:white; font-weight:bold" *ngIf="!authService.loggedIn()">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.loggedIn()">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/user" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
-        </li> 
-      </ul>
+<div id="container" *ngIf="currentUser">
+  <nav>
+    <div id="logo">
+      CodeMo<span class="material-icons">school</span>
     </div>
-<<<<<<< HEAD
-  </nav>
-=======
-<div style='margin-right:300px;'></div>
-  <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item" style='margin-right:200px;'>
-        <a class="nav-link" routerLink="" style='color:white;'><b>PRACTICE</b></a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" routerLink=""><i class='fa fa-search' style='color:white; font-weight:bold;'><u> Search</u></i></a>
-      </li>
-      <li class="nav-item" >
-        <a class="nav-link" routerLink=""><i class='fa fa-envelope' style='color:white; font-weight:bold;'></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/"><i class='fa fa-user' style='color:white; font-weight:bold;'></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/register" style="color:white; font-weight:bold" *ngIf="!authService.loggedIn()">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="!authService.loggedIn()">Sign In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/user" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login" style="color:white; font-weight:bold"*ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  >Profile</a>
-      </li> 
+    <ul>
+      <li><a href="#">Practice</a></li>
+      <li><a href="#">Create Test</a></li>
+      <li class="dropdown"><a href="#">Account&nbsp;<i class="fa fa-caret-down"></i> </a>
+       <div class="dd">
+         <div id="u_a_c"><div id="up_arrow"></div></div>
+        <ul>         
+          <li><a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
+          <li><a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
+        </ul>
+        </div>
     </ul>
-  </div>
-</nav>
-<<<<<<< HEAD
->>>>>>> 21b408b... fix differences in file structure:src/app/header/header.component.html
-=======
-
->>>>>>> f920880... erge conflict fix
-=======
   </nav>
->>>>>>> 0bd5c48... all merge conflicts fixed
-=======
-<div class="header" *ngIf="currentUser">
-  <h2 class="logo">CodeMo<span class="material-icons">school</span></h2>
-  <input type="checkbox" id="chk">
-  <label for="chk" class="show-menu-btn">
-    <i class="fas fa-ellipsis-h"></i>
-  </label>
-  <ul class="menu">
-    <li class="nav_links"> <a href="#">Challenges</a></li>
-    <li class="nav_links"> <a href="#">Practice</a></li>
-    <!-- <li class="nav_links"> <a routerLink="/register" *ngIf="!authService.loggedIn()">Sign Up</a></li>
-    <li class="nav_links"> <a routerLink="/login" *ngIf="!authService.loggedIn()">Sign In>Sign In</a></li> -->
-    <li class="nav_links"> <a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a></li>
-    <li class="nav_links"> <a routerLink="/login" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
-    <label for="chk" class="hide-menu-btn">
-      <i class="fas fa-times"></i>
-    </label>
-  </ul>
 </div>
 
-
->>>>>>> dca6016... fix dashboard display

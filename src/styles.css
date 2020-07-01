@@ -2,21 +2,12 @@
 
 body{
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
-<<<<<<< HEAD
   /* background-image: linear-gradient(white,rgb(195, 207, 207)); */
   background-color: rgb(244, 247, 247);
   width: 100%;
 
 }
-=======
-  background-color: #F3F7F7;
->>>>>>> 18dc6b6... review project structure
-=======
-  /* background-image: linear-gradient(white,rgb(195, 207, 207)); */
-  background-color: rgb(244, 247, 247);
-  width: 100%;
->>>>>>> 90b48ab... fix more conflicts
+
 
 @media screen and (max-width: 600px) {
   .update{

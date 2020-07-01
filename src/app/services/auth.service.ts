@@ -53,7 +53,6 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('Bearer')
   }
-<<<<<<< HEAD
 
 
   getUser(){
@@ -64,6 +63,3 @@ export class AuthService {
     return this.http.put<any>(this._authUrl + 'user/' ,user)
   }
 }
-=======
-}
->>>>>>> 0bd5c48... all merge conflicts fixed
