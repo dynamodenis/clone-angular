@@ -24,8 +24,10 @@ import { AnswerComponent } from './components/question/answer/answer.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-import { UpdateProfileComponent } from './components/user-profile/update-profile/update-profile.component';
-import { AuthGuard } from './helpers/auth.guard';
+import { UpdateProfileComponent } from './user-profile/update-profile/update-profile.component';
+import { AuthGuard } from './services/helpers/auth.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 
 
 

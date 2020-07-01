@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { EndpointsService } from '../services/endpoints.service';
+<<<<<<< HEAD:src/app/components/header/header.component.ts
 import { HttpClient } from '@angular/common/http';
+=======
+>>>>>>> 21b408b... fix differences in file structure:src/app/header/header.component.ts
 
 
 @Component({
