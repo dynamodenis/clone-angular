@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     ) { 
-      if (this.authService.currentUserValue) { 
-        this.router.navigate(['dashboard']);
-      }
+      // if (this.authService.currentUserValue) { 
+      //   this.router.navigate(['dashboard']);
+      // }
     }
 
   ngOnInit(){
@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(body).subscribe(
       res => {
+        localStorage.setItem('Bearer', res.user.token)
         this.router.navigate([this.returnUrl]);
       }
     )

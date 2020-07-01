@@ -11,14 +11,12 @@ import { GlobalService } from './global.service';
   providedIn: 'root'
 })
 export class EndpointsService {
-
   apiHost = 'http://127.0.0.1:8000/api/';
   profileUrl="http://127.0.0.1:8000";
 
 
-  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
 
-  constructor(private tokenInterceptorService: TokenInterceptorService, private http: HttpClient) { }
+  constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
 
   // getProfile(id:number){
   //   // console.log(this.globalService.headers())

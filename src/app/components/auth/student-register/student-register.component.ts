@@ -48,6 +48,10 @@ export class StudentRegisterComponent implements OnInit {
 
     this.authService.registerStudent(body).subscribe(
       res => {
+<<<<<<< HEAD
+=======
+        localStorage.setItem('Bearer', res.user.token)
+>>>>>>> fb74889... fix interceptor bug
         this.router.navigate(['/login']);
       }
     )
