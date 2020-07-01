@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TokenInterceptorService } from '../../../services/token-interceptor.service';
-import { EndpointsService} from '../../../services/endpoints.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
