@@ -24,7 +24,7 @@ import { AnswerComponent } from './components/question/answer/answer.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { StudentRegisterComponent } from './components/auth/student-register/student-register.component';
 import { MentorRegisterComponent } from './components/auth/mentor-register/mentor-register.component';
-import { AuthGuard } from './services/helpers/auth.guard';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 
