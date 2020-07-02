@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-
+<app-header></app-header>
 <div id="about" class="offset">
     <div *ngIf='profile != null'>
         <div class="jumbotron mt-4" id="about">
@@ -43,7 +42,7 @@
             <legend class="legend" *ngIf='profile.user.is_student'>Tests Taken</legend>
             <div *ngIf='questions !=null'>
                 <div class="row">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-4 mb-4">
                         <div *ngFor='let question of questions' class="card tests ">
                             <h5 class="card-title m-2">Test : {{question.name}}</h5>
                             <div class="form-inline">

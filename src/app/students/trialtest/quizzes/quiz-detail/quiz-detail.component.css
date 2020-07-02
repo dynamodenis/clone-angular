@@ -1,0 +1,32 @@
+.question-wrapper {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .question-number {
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+  
+  .buttons {
+  text-align: center;
+  }
+  
+  button {
+    background-color: #637C33 ;
+    font-family: "Quicksand";
+    padding: 8px 15px;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    margin: 20px 5px;
+    cursor: pointer;
+  }
+  mat-form-field {
+    margin-right: 12px;
+  }
+  

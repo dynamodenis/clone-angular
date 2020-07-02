@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md  navbar-default fixed-top" *ngIf="currentUser">
+<!-- <nav class="navbar navbar-expand-md  navbar-default fixed-top" *ngIf="currentUser">
   <div style='margin-right:300px;'></div>
     <a class="navbar-brand" href="#" style='color:white;'><b>CodeMo</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -37,4 +37,33 @@
         </li> 
       </ul>
     </div>
+  </nav> -->
+
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- *ngIf="currentUser" -->
+<header  >
+  <div class="logo">CodeMo<span class="material-icons">school</span></div>
+  <nav>
+    <ul>
+      <li><a routerLink="">Practice</a></li>
+      <li><a routerLink="/quizzes/all">Start Test</a></li>
+      <li class="nav-item" *ngIf='user.user.is_mentor'>
+        <a class="nav-link" routerLink="/test" style='color:white;' >Create Test</a>
+      </li>
+      <li class="sub-menu"><a>Account Info</a>
+        <ul>
+          <li>
+            <a routerLink="/user" *ngIf="authService.loggedIn()">Profile</a>
+          </li>
+          <li>
+            <a *ngIf="authService.loggedIn()" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
+  <div class="menu-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</header>

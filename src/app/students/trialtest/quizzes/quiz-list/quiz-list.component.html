@@ -1,0 +1,28 @@
+<div  class="container">
+    <div *ngIf="quizzes != null" class="quizzes-container">
+      
+        <div *ngFor="let quiz of quizzes" class="quiz-item">
+            <div class="quiz-image">
+                <img src={{quiz.image}} alt="" width="100%"/>
+            </div>
+            <div>
+                
+                <div>
+                    <h2>{{quiz.name}}</h2>
+                </div>
+                <div>
+                    <p>{{quiz.description}}</p>
+                </div>
+                <div class="actions">
+                    <span>{{quiz.questions_count}} Questions</span>
+                    <a [routerLink]="['/trial', quiz.slug]">
+                        <button class="start-quiz-button">Start</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background-color: black; position: absolute; right: 0; bottom: 0; left: 0; padding: 1rem; text-align: center;">
+        <p class="text-xs-center text-white">© Copyright 2020. All rights reserved.</p>
+    </footer></div>

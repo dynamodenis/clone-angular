@@ -52,4 +52,29 @@ export class EndpointsService {
   addQuiz(slug: string) {
     return this.apiHost + 'quizzes/';
   }
+  // tRial Page
+
+  tquizzes() {
+    return this.apiHost + 'trial/quizzes/';
+  }
+
+  tquiz(slug: string) {
+    return this.apiHost + 'trial/quizzes/' + slug + "/";
+  }
+
+  tsaveAnswer() {
+    return this.apiHost + 'trial/saveanswer/';
+  }
+
+  tsubmitQuiz(slug: string) {
+    return this.apiHost + 'trial/quizzes/' + slug + "/submit/";
+  }
+  setTest(){
+    
+      return this.apiHost + 'trial/settest/' ;
+  }
+  stats(){
+    
+    return this.apiHost + 'trial/statistics/' ;
+}
 }

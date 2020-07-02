@@ -16,6 +16,10 @@ import { QuizScoresComponent } from './students/quizzes/quiz-scores/quiz-scores.
 import { QuizzesComponent } from './students/quizzes/quizzes.component';
 import { QuizListComponent } from './students/quizzes/quiz-list/quiz-list.component';
 import { QuizDetailComponent } from './students/quizzes/quiz-detail/quiz-detail.component';
+import { TrialComponent } from './students/trialtest/quizzes/quizzes.component';
+import { TrialListComponent } from './students/trialtest/quizzes/quiz-list/quiz-list.component';
+import { TrialDetailComponent } from './students/trialtest/quizzes/quiz-detail/quiz-detail.component';
+import { QuizResultComponent } from './students/trialtest/quizzes/quiz-result/quiz-result.component';
 
 
 
@@ -51,6 +55,31 @@ const routes: Routes = [
       {
         path: ':slug/result',
         component: QuizScoresComponent
+      }
+    ]
+  },
+  // Trial Tests
+  {
+    path: 'trial',
+    component: TrialComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'all',
+        pathMatch: 'full'
+      },
+      {
+        path: 'all',
+        component: TrialListComponent
+      },
+      {
+        path: ':slug',
+        component: TrialDetailComponent
+      },
+      {
+        path: ': slug/result',
+        component:QuizResultComponent
       }
     ]
   },
