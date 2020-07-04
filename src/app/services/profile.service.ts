@@ -8,7 +8,7 @@ import { GlobalService } from './global.service';
 })
 export class ProfileService {
 
-  apiHost = 'http://127.0.0.1:8000/api/';
+  apiHost = 'https://codemoschool.herokuapp.com/api/';
   constructor(
     private http: HttpClient,
     private endpoints: EndpointsService,

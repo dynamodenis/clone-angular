@@ -30,12 +30,13 @@ export class UserProfileComponent implements OnInit {
 
     this.endpointsService.getProfile().subscribe(res=>{
       this.profile=res;
+      console.log(this.profile)
       this.picture=this.endpointsService.profileUrl+this.profile.picture
 
 
     this.endpointsService.getMyQuizzes().subscribe(res=>{
       this.questions=res;
-      console.log(this.questions[0].questions_count)
+      // console.log(this.questions[0].questions_count)
     })
       
     })

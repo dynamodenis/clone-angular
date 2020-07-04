@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private _authUrl = 'http://127.0.0.1:8000/api/auth/'
+  private _authUrl = 'https://codemoschool.herokuapp.com/api/auth/'
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 

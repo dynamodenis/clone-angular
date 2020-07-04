@@ -45,6 +45,10 @@ export class UpdateProfileComponent implements OnInit {
   updateProfile(){
     const update=new FormData();
     update.append('picture',this.updateForm.get('picture').value)
+    update.append('bio',this.updateForm.get('bio').value)
+    update.append('location',this.updateForm.get('location').value)
+    update.append('education',this.updateForm.get('education').value)
+    update.append('company',this.updateForm.get('company').value)
     this.endpointsService.updateProfile(update).subscribe(res=>{
       this.router.navigate(['/user']);
     })
@@ -59,7 +63,7 @@ export class UpdateProfileComponent implements OnInit {
       // localStorage.setItem('Token', res.user.token)
       this.profile=res;
       this.mentor=this.profile['user'].is_mentor
-      console.log(this.mentor)
+      // console.log(this.mentor)
 
     // this.authService.getUser().subscribe(res=>{
     //   this.user=res
