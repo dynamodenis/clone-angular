@@ -60,7 +60,7 @@ export class QuizDetailComponent implements OnInit {
     };
 
     this.quizzesService.saveAnswer(body).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     });
   }
 
@@ -75,6 +75,7 @@ export class QuizDetailComponent implements OnInit {
     };
 
     this.quizzesService.submitQuiz(body, this.slug).subscribe((res) => {
+      console.log(res)
       this.router.navigate(['/quizzes/' + this.slug + '/result']);
     });
   }
@@ -96,7 +97,7 @@ export class QuizDetailComponent implements OnInit {
   }
 
   selectAnswer(id: number) {
-    console.log(id);
+    // console.log(id);
     this.selectedAnswer = id;
     this.answers[this.currentIndex] = id;
   }

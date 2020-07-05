@@ -21,7 +21,7 @@ export class QuoteFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.quizzesService.setQuizzes().subscribe((data) => {
+    this.quizzesService.setQuizzes(this.quizzes).subscribe((data) => {
       this.quizzes = data;
     });
 

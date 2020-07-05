@@ -1,3 +1,15 @@
-<h3 class="text-center text-success mt-5" >CONGRATULATIONS!! You finished the test.
+<h3 class="text-center text-success mt-5" >CONGRATULATIONS!! You finished the test, here is the results.
 </h3>
-<h4 class="text-center">Your test results will be sent via Email.</h4>
+<!-- <h4 class="text-center">Your test results will be sent via Email.</h4> -->
+<div *ngIf='results!=null'>
+    <!-- <h5>{{results.quiztaker_set.score}}</h5> -->
+    <div class="card question-wrapper">
+        <h3>{{results.name}}</h3>
+        <h5>{{results.description}}</h5>
+        <p *ngIf='results.quiztaker_set.completed'>Status <span class="badge badge-success">Completed</span></p>
+        <p *ngIf='results.quiztaker_set.completed !=true'>Status <span class="badge badge-warning">Not Completed</span></p>
+        <p>Total Questions <span class="badge badge-info">{{results.question_set.length}}</span></p>
+        <p>Score <span class="badge badge-success">{{results.quiztaker_set.score}}</span></p>  
+        <p class="text-muted">Your test results will be sent via Email.</p>     
+    </div>
+</div>

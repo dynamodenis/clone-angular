@@ -38,6 +38,7 @@ const routes: Routes = [
   {
     path: 'quizzes',
     component: QuizzesComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

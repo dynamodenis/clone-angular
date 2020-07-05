@@ -9,8 +9,11 @@ import { GlobalService } from './global.service';
 })
 export class EndpointsService {
 
-  apiHost = 'https://codemoschool.herokuapp.com/api/';
-  profileUrl="https://codemoschool.herokuapp.com";
+  // apiHost = 'https://codemoschool.herokuapp.com/api/';
+  // profileUrl="https://codemoschool.herokuapp.com";
+
+  apiHost = 'http://127.0.0.1:8000/api/';
+  profileUrl="http://127.0.0.1:8000";
 
 
   constructor(private tokenInterceptorService: TokenInterceptorService,private http: HttpClient) { }
@@ -49,6 +52,10 @@ export class EndpointsService {
   submitQuiz(slug: string) {
     return this.apiHost + 'quizzes/' + slug + '/submit/';
   }
+
+
+
+
   addQuiz(slug: string) {
     return this.apiHost + 'quizzes/';
   }

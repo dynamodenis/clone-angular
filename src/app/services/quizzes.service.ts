@@ -17,8 +17,8 @@ export class QuizzesService {
   getQuizzes() {
     return this.http.get(this.endpoints.quizzes());
   }
-  setQuizzes(){
-    return this.http.post(this.endpoints.quizzes(), {headers: this.globalService.headers()});
+  setQuizzes(body){
+    return this.http.post(this.endpoints.quizzes(),body);
   }
 
   getQuiz(slug: string) {
@@ -32,6 +32,11 @@ export class QuizzesService {
   submitQuiz(body, slug) {
     return this.http.post(this.endpoints.submitQuiz(slug), body);
   }
+
+  getSubmitQuiz(slug) {
+    return this.http.get(this.endpoints.submitQuiz(slug));
+  }
+
 clear(){
   // return this.http.post(this.endpoints.submitQuiz(''));
 

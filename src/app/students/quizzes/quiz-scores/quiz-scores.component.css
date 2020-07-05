@@ -1,0 +1,9 @@
+.question-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+  }
